@@ -1,556 +1,1074 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SaudiDeals - Compare prices and find the best deals in Saudi Arabia.">
-  <title>SaudiDeals - Best Prices in Saudi Arabia</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f6f7f9;
-      color: #171717;
-    }
+<meta name="description" content="SaudiDeals - Compare prices and find the best shopping deals in Saudi Arabia.">
 
-    header {
-      background: #ffffff;
-      border-bottom: 1px solid #e5e7eb;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+<title>SaudiDeals 🇸🇦 | Compare Prices</title>
 
-    .topbar {
-      max-width: 1200px;
-      margin: auto;
-      padding: 18px 20px;
-      display: flex;
-      align-items: center;
-      gap: 25px;
-    }
+<style>
 
-    .logo {
-      font-size: 27px;
-      font-weight: 800;
-      color: #087443;
-      white-space: nowrap;
-    }
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
 
-    .logo span {
-      color: #111827;
-    }
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f5f7f8;
+color:#111827;
+}
 
-    .search {
-      flex: 1;
-      display: flex;
-      background: #f3f4f6;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid #e5e7eb;
-    }
+header{
+background:white;
+border-bottom:1px solid #e5e7eb;
+position:sticky;
+top:0;
+z-index:100;
+}
 
-    .search input {
-      flex: 1;
-      border: 0;
-      background: transparent;
-      padding: 14px;
-      outline: none;
-      font-size: 15px;
-    }
+.header{
+max-width:1200px;
+margin:auto;
+padding:16px 20px;
+display:flex;
+align-items:center;
+gap:25px;
+}
 
-    .search button {
-      border: 0;
-      background: #087443;
-      color: white;
-      padding: 0 22px;
-      cursor: pointer;
-      font-weight: bold;
-    }
+.logo{
+font-size:28px;
+font-weight:800;
+color:#087443;
+white-space:nowrap;
+}
 
-    .nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 20px 15px;
-      display: flex;
-      gap: 22px;
-      overflow-x: auto;
-    }
+.logo span{
+color:#111827;
+}
 
-    .nav a {
-      text-decoration: none;
-      color: #444;
-      font-size: 14px;
-      white-space: nowrap;
-    }
+.search{
+flex:1;
+display:flex;
+background:#f3f4f6;
+border:1px solid #ddd;
+border-radius:12px;
+overflow:hidden;
+}
 
-    .hero {
-      max-width: 1200px;
-      margin: 30px auto;
-      padding: 55px 35px;
-      border-radius: 22px;
-      background: linear-gradient(135deg, #087443, #0b9a59);
-      color: white;
-    }
+.search input{
+flex:1;
+border:0;
+outline:none;
+background:transparent;
+padding:14px;
+font-size:16px;
+}
 
-    .hero h1 {
-      font-size: 42px;
-      max-width: 650px;
-      margin-bottom: 15px;
-    }
+.search button{
+border:0;
+background:#087443;
+color:white;
+padding:0 25px;
+font-weight:bold;
+font-size:15px;
+cursor:pointer;
+}
 
-    .hero p {
-      font-size: 18px;
-      max-width: 650px;
-      line-height: 1.6;
-      opacity: 0.95;
-    }
+.search button:hover{
+background:#065d35;
+}
 
-    .hero-button {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 13px 22px;
-      background: white;
-      color: #087443;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: bold;
-    }
+.nav{
+max-width:1200px;
+margin:auto;
+padding:0 20px 14px;
+display:flex;
+gap:24px;
+overflow-x:auto;
+}
 
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 20px 40px;
-    }
+.nav a{
+text-decoration:none;
+color:#444;
+font-size:14px;
+white-space:nowrap;
+}
 
-    .section-title {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 35px 0 18px;
-    }
+.hero{
+max-width:1200px;
+margin:30px auto;
+padding:60px 40px;
+border-radius:22px;
+background:linear-gradient(135deg,#087443,#0a9855);
+color:white;
+}
 
-    .section-title h2 {
-      font-size: 25px;
-    }
+.hero h1{
+font-size:44px;
+max-width:700px;
+margin-bottom:15px;
+}
 
-    .section-title a {
-      color: #087443;
-      text-decoration: none;
-      font-size: 14px;
-    }
+.hero p{
+font-size:18px;
+line-height:1.6;
+max-width:680px;
+}
 
-    .categories {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 12px;
-    }
+.hero button{
+margin-top:25px;
+padding:13px 22px;
+border:0;
+border-radius:10px;
+background:white;
+color:#087443;
+font-weight:bold;
+cursor:pointer;
+}
 
-    .category {
-      background: white;
-      border: 1px solid #e5e7eb;
-      padding: 20px 10px;
-      border-radius: 14px;
-      text-align: center;
-      cursor: pointer;
-      transition: 0.2s;
-    }
+.container{
+max-width:1200px;
+margin:auto;
+padding:0 20px 50px;
+}
 
-    .category:hover {
-      transform: translateY(-3px);
-      border-color: #087443;
-    }
+.section-title{
+margin:35px 0 18px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
 
-    .category .icon {
-      font-size: 30px;
-      margin-bottom: 10px;
-    }
+.section-title h2{
+font-size:25px;
+}
 
-    .category p {
-      font-size: 13px;
-      font-weight: bold;
-    }
+.categories{
+display:grid;
+grid-template-columns:repeat(7,1fr);
+gap:12px;
+}
 
-    .products {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
+.category{
+background:white;
+border:1px solid #e5e7eb;
+border-radius:14px;
+padding:20px 8px;
+text-align:center;
+cursor:pointer;
+transition:.2s;
+}
 
-    .product {
-      background: white;
-      border-radius: 15px;
-      border: 1px solid #e5e7eb;
-      padding: 15px;
-      position: relative;
-      overflow: hidden;
-    }
+.category:hover{
+transform:translateY(-3px);
+border-color:#087443;
+}
 
-    .product-image {
-      height: 170px;
-      background: #f3f4f6;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 60px;
-      margin-bottom: 15px;
-    }
+.category-icon{
+font-size:32px;
+margin-bottom:10px;
+}
 
-    .product h3 {
-      font-size: 16px;
-      line-height: 1.4;
-      margin-bottom: 10px;
-    }
+.category p{
+font-size:13px;
+font-weight:bold;
+}
 
-    .price {
-      font-size: 22px;
-      font-weight: 800;
-      color: #087443;
-    }
+.products{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
+}
 
-    .old-price {
-      color: #999;
-      text-decoration: line-through;
-      font-size: 13px;
-      margin-left: 6px;
-    }
+.product{
+background:white;
+border:1px solid #e5e7eb;
+border-radius:15px;
+padding:15px;
+}
 
-    .store {
-      color: #777;
-      font-size: 13px;
-      margin-top: 7px;
-    }
+.product-image{
+height:160px;
+background:#f1f3f5;
+border-radius:10px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:60px;
+margin-bottom:15px;
+}
 
-    .compare {
-      display: block;
-      text-align: center;
-      background: #087443;
-      color: white;
-      text-decoration: none;
-      padding: 11px;
-      border-radius: 9px;
-      margin-top: 15px;
-      font-size: 14px;
-      font-weight: bold;
-    }
+.product h3{
+font-size:16px;
+line-height:1.4;
+margin-bottom:10px;
+}
 
-    .comparison {
-      background: white;
-      border-radius: 18px;
-      border: 1px solid #e5e7eb;
-      padding: 25px;
-      margin-top: 20px;
-    }
+.price{
+color:#087443;
+font-size:21px;
+font-weight:bold;
+}
 
-    .comparison p {
-      color: #666;
-      line-height: 1.6;
-    }
+.store{
+color:#777;
+font-size:13px;
+margin-top:7px;
+}
 
-    .stores {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 15px;
-      margin-top: 20px;
-    }
+.compare{
+display:block;
+margin-top:15px;
+padding:11px;
+text-align:center;
+background:#087443;
+color:white;
+text-decoration:none;
+border-radius:9px;
+font-weight:bold;
+}
 
-    .store-box {
-      background: white;
-      padding: 25px 15px;
-      border-radius: 14px;
-      border: 1px solid #e5e7eb;
-      text-align: center;
-      font-weight: bold;
-    }
+#searchResults{
+display:none;
+background:white;
+border:1px solid #e5e7eb;
+border-radius:16px;
+padding:25px;
+margin-top:30px;
+}
 
-    footer {
-      background: #111827;
-      color: white;
-      margin-top: 50px;
-      padding: 40px 20px;
-    }
+#searchResults h2{
+margin-bottom:10px;
+}
 
-    .footer-inner {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 40px;
-    }
+.results-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+margin-top:20px;
+}
 
-    footer h3 {
-      margin-bottom: 12px;
-    }
+.result-card{
+border:1px solid #e5e7eb;
+border-radius:12px;
+padding:15px;
+background:#fafafa;
+}
 
-    footer p,
-    footer a {
-      color: #cbd5e1;
-      font-size: 14px;
-      line-height: 1.8;
-      text-decoration: none;
-    }
+.result-icon{
+font-size:45px;
+text-align:center;
+padding:15px;
+}
 
-    @media (max-width: 900px) {
-      .categories {
-        grid-template-columns: repeat(4, 1fr);
-      }
+.result-card h3{
+font-size:15px;
+margin-bottom:10px;
+}
 
-      .products {
-        grid-template-columns: repeat(2, 1fr);
-      }
+.result-price{
+font-size:19px;
+font-weight:bold;
+color:#087443;
+}
 
-      .stores {
-        grid-template-columns: repeat(3, 1fr);
-      }
+.result-store{
+font-size:13px;
+color:#777;
+margin-top:5px;
+}
 
-      .hero h1 {
-        font-size: 32px;
-      }
-    }
+.result-button{
+display:block;
+margin-top:12px;
+background:#087443;
+color:white;
+text-decoration:none;
+padding:9px;
+text-align:center;
+border-radius:8px;
+font-size:13px;
+}
 
-    @media (max-width: 600px) {
-      .topbar {
-        flex-wrap: wrap;
-        gap: 12px;
-      }
+.no-results{
+padding:20px 0;
+color:#666;
+}
 
-      .logo {
-        width: 100%;
-      }
+.stores{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:15px;
+}
 
-      .search {
-        width: 100%;
-      }
+.store-box{
+background:white;
+border:1px solid #e5e7eb;
+border-radius:14px;
+padding:25px 10px;
+text-align:center;
+font-weight:bold;
+}
 
-      .categories {
-        grid-template-columns: repeat(2, 1fr);
-      }
+.info{
+background:white;
+border:1px solid #e5e7eb;
+border-radius:16px;
+padding:25px;
+line-height:1.7;
+}
 
-      .products {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-      }
+footer{
+background:#111827;
+color:white;
+margin-top:50px;
+padding:40px 20px;
+}
 
-      .product {
-        padding: 10px;
-      }
+.footer{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:2fr 1fr 1fr;
+gap:40px;
+}
 
-      .product-image {
-        height: 130px;
-      }
+footer h3{
+margin-bottom:12px;
+}
 
-      .stores {
-        grid-template-columns: repeat(2, 1fr);
-      }
+footer p,
+footer a{
+color:#cbd5e1;
+font-size:14px;
+line-height:1.8;
+text-decoration:none;
+}
 
-      .footer-inner {
-        grid-template-columns: 1fr;
-      }
+@media(max-width:900px){
 
-      .hero {
-        margin: 20px;
-        padding: 35px 25px;
-      }
+.categories{
+grid-template-columns:repeat(4,1fr);
+}
 
-      .container {
-        padding: 0 15px;
-      }
-    }
-  </style>
+.products{
+grid-template-columns:repeat(2,1fr);
+}
+
+.results-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.stores{
+grid-template-columns:repeat(3,1fr);
+}
+
+.hero h1{
+font-size:34px;
+}
+
+}
+
+@media(max-width:600px){
+
+.header{
+flex-wrap:wrap;
+}
+
+.logo{
+width:100%;
+}
+
+.search{
+width:100%;
+}
+
+.hero{
+margin:20px;
+padding:40px 25px;
+}
+
+.hero h1{
+font-size:30px;
+}
+
+.container{
+padding:0 15px 40px;
+}
+
+.categories{
+grid-template-columns:repeat(2,1fr);
+}
+
+.products{
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+}
+
+.product{
+padding:10px;
+}
+
+.product-image{
+height:120px;
+}
+
+.results-grid{
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+
+.stores{
+grid-template-columns:repeat(2,1fr);
+}
+
+.footer{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
 </head>
 
 <body>
 
 <header>
-  <div class="topbar">
-    <div class="logo">Saudi<span>Deals</span></div>
 
-    <div class="search">
-      <input type="text" placeholder="Search products in Saudi Arabia...">
-      <button>Search</button>
-    </div>
-  </div>
+<div class="header">
 
-  <nav class="nav">
-    <a href="#">Home</a>
-    <a href="#">Today's Deals</a>
-    <a href="#">Mobiles</a>
-    <a href="#">Laptops</a>
-    <a href="#">Gaming</a>
-    <a href="#">Electronics</a>
-    <a href="#">Home & Kitchen</a>
-    <a href="#">Fashion</a>
-    <a href="#">Beauty</a>
-  </nav>
+<div class="logo">
+Saudi<span>Deals</span> 🇸🇦
+</div>
+
+<div class="search">
+
+<input
+id="searchInput"
+type="text"
+placeholder="Search iPhone, laptop, PS5..."
+autocomplete="off"
+>
+
+<button id="searchButton">
+Search
+</button>
+
+</div>
+
+</div>
+
+<nav class="nav">
+
+<a href="#">Home</a>
+<a href="#deals">Today's Deals</a>
+<a href="#">Mobiles</a>
+<a href="#">Laptops</a>
+<a href="#">Gaming</a>
+<a href="#">Electronics</a>
+<a href="#">Home & Kitchen</a>
+<a href="#">Fashion</a>
+<a href="#">Beauty</a>
+
+</nav>
+
 </header>
 
-<section class="hero">
-  <h1>Find the Best Prices in Saudi Arabia 🇸🇦</h1>
-  <p>
-    Compare products, discover amazing deals and find the best prices
-    from Saudi shopping stores — all in one place.
-  </p>
 
-  <a href="#deals" class="hero-button">Explore Deals</a>
+<section class="hero">
+
+<h1>
+Find the Best Prices in Saudi Arabia 🇸🇦
+</h1>
+
+<p>
+Compare products, discover deals and find better prices
+from Saudi shopping stores — all in one place.
+</p>
+
+<button onclick="document.getElementById('deals').scrollIntoView()">
+Explore Deals
+</button>
+
 </section>
+
 
 <main class="container">
 
-  <div class="section-title">
-    <h2>Shop by Category</h2>
-    <a href="#">View All</a>
-  </div>
 
-  <div class="categories">
+<!-- SEARCH RESULTS -->
 
-    <div class="category">
-      <div class="icon">📱</div>
-      <p>Mobiles & Tablets</p>
-    </div>
+<div id="searchResults">
 
-    <div class="category">
-      <div class="icon">💻</div>
-      <p>Laptops & Computers</p>
-    </div>
+<h2>🔎 Search Results</h2>
 
-    <div class="category">
-      <div class="icon">🎮</div>
-      <p>Gaming</p>
-    </div>
+<p id="searchMessage"></p>
 
-    <div class="category">
-      <div class="icon">📺</div>
-      <p>TV & Electronics</p>
-    </div>
+<div id="resultsGrid" class="results-grid"></div>
 
-    <div class="category">
-      <div class="icon">🏠</div>
-      <p>Home & Kitchen</p>
-    </div>
+</div>
 
-    <div class="category">
-      <div class="icon">👕</div>
-      <p>Fashion</p>
-    </div>
 
-    <div class="category">
-      <div class="icon">💄</div>
-      <p>Beauty</p>
-    </div>
+<!-- CATEGORIES -->
 
-  </div>
+<div class="section-title">
 
-  <div class="section-title" id="deals">
-    <h2>🔥 Today's Best Deals</h2>
-    <a href="#">See All Deals</a>
-  </div>
+<h2>Shop by Category</h2>
 
-  <div class="products">
+</div>
 
-    <div class="product">
-      <div class="product-image">📱</div>
-      <h3>Smartphone Deals</h3>
-      <div>
-        <span class="price">From SAR 499</span>
-      </div>
-      <div class="store">Compare Saudi stores</div>
-      <a class="compare" href="#">Compare Prices</a>
-    </div>
 
-    <div class="product">
-      <div class="product-image">💻</div>
-      <h3>Laptop Deals</h3>
-      <div>
-        <span class="price">From SAR 999</span>
-      </div>
-      <div class="store">Compare Saudi stores</div>
-      <a class="compare" href="#">Compare Prices</a>
-    </div>
+<div class="categories">
 
-    <div class="product">
-      <div class="product-image">🎮</div>
-      <h3>Gaming Deals</h3>
-      <div>
-        <span class="price">From SAR 799</span>
-      </div>
-      <div class="store">Compare Saudi stores</div>
-      <a class="compare" href="#">Compare Prices</a>
-    </div>
+<div class="category">
+<div class="category-icon">📱</div>
+<p>Mobiles & Tablets</p>
+</div>
 
-    <div class="product">
-      <div class="product-image">📺</div>
-      <h3>TV & Electronics Deals</h3>
-      <div>
-        <span class="price">From SAR 599</span>
-      </div>
-      <div class="store">Compare Saudi stores</div>
-      <a class="compare" href="#">Compare Prices</a>
-    </div>
+<div class="category">
+<div class="category-icon">💻</div>
+<p>Laptops & Computers</p>
+</div>
 
-  </div>
+<div class="category">
+<div class="category-icon">🎮</div>
+<p>Gaming</p>
+</div>
 
-  <div class="section-title">
-    <h2>💰 How SaudiDeals Works</h2>
-  </div>
+<div class="category">
+<div class="category-icon">📺</div>
+<p>TV & Electronics</p>
+</div>
 
-  <div class="comparison">
-    <h3>Find → Compare → Save</h3>
-    <br>
-    <p>
-      Search for a product on SaudiDeals. We will show prices from different
-      shopping stores so you can compare them and choose the best deal.
-    </p>
-  </div>
+<div class="category">
+<div class="category-icon">🏠</div>
+<p>Home & Kitchen</p>
+</div>
 
-  <div class="section-title">
-    <h2>🏪 Shopping Stores</h2>
-  </div>
+<div class="category">
+<div class="category-icon">👕</div>
+<p>Fashion</p>
+</div>
 
-  <div class="stores">
-    <div class="store-box">Amazon.sa</div>
-    <div class="store-box">Noon</div>
-    <div class="store-box">Jarir</div>
-    <div class="store-box">eXtra</div>
-    <div class="store-box">Other Stores</div>
-  </div>
+<div class="category">
+<div class="category-icon">💄</div>
+<p>Beauty</p>
+</div>
+
+</div>
+
+
+<!-- DEALS -->
+
+<div class="section-title" id="deals">
+
+<h2>🔥 Today's Best Deals</h2>
+
+</div>
+
+
+<div class="products">
+
+
+<div class="product">
+
+<div class="product-image">📱</div>
+
+<h3>iPhone Deals</h3>
+
+<div class="price">
+From SAR 1,999
+</div>
+
+<div class="store">
+Saudi stores
+</div>
+
+<a class="compare" href="#">
+Compare Prices
+</a>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">💻</div>
+
+<h3>Laptop Deals</h3>
+
+<div class="price">
+From SAR 999
+</div>
+
+<div class="store">
+Saudi stores
+</div>
+
+<a class="compare" href="#">
+Compare Prices
+</a>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">🎮</div>
+
+<h3>Gaming Deals</h3>
+
+<div class="price">
+From SAR 799
+</div>
+
+<div class="store">
+Saudi stores
+</div>
+
+<a class="compare" href="#">
+Compare Prices
+</a>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-image">📺</div>
+
+<h3>TV & Electronics</h3>
+
+<div class="price">
+From SAR 599
+</div>
+
+<div class="store">
+Saudi stores
+</div>
+
+<a class="compare" href="#">
+Compare Prices
+</a>
+
+</div>
+
+
+</div>
+
+
+<!-- HOW IT WORKS -->
+
+<div class="section-title">
+
+<h2>💰 How SaudiDeals Works</h2>
+
+</div>
+
+
+<div class="info">
+
+<h3>Find → Compare → Save</h3>
+
+<br>
+
+<p>
+Search for a product on SaudiDeals.
+Our system will show matching products
+and prices from our available shopping data.
+</p>
+
+</div>
+
+
+<!-- STORES -->
+
+<div class="section-title">
+
+<h2>🏪 Shopping Stores</h2>
+
+</div>
+
+
+<div class="stores">
+
+<div class="store-box">
+Amazon.sa
+</div>
+
+<div class="store-box">
+Noon
+</div>
+
+<div class="store-box">
+Jarir
+</div>
+
+<div class="store-box">
+eXtra
+</div>
+
+<div class="store-box">
+More Stores
+</div>
+
+</div>
+
 
 </main>
 
+
 <footer>
-  <div class="footer-inner">
 
-    <div>
-      <h3>SaudiDeals 🇸🇦</h3>
-      <p>
-        SaudiDeals helps shoppers in Saudi Arabia discover,
-        compare and find better prices online.
-      </p>
-    </div>
+<div class="footer">
 
-    <div>
-      <h3>Quick Links</h3>
-      <p><a href="#">Home</a></p>
-      <p><a href="#">Deals</a></p>
-      <p><a href="#">Categories</a></p>
-      <p><a href="#">About Us</a></p>
-    </div>
+<div>
 
-    <div>
-      <h3>Legal</h3>
-      <p><a href="#">Privacy Policy</a></p>
-      <p><a href="#">Terms & Conditions</a></p>
-      <p><a href="#">Contact Us</a></p>
-    </div>
+<h3>
+SaudiDeals 🇸🇦
+</h3>
 
-  </div>
+<p>
+SaudiDeals is being built to help shoppers
+in Saudi Arabia discover, compare and find
+better online prices.
+</p>
+
+</div>
+
+
+<div>
+
+<h3>
+Quick Links
+</h3>
+
+<p>
+<a href="#">Home</a>
+</p>
+
+<p>
+<a href="#deals">Deals</a>
+</p>
+
+<p>
+<a href="#">Categories</a>
+</p>
+
+</div>
+
+
+<div>
+
+<h3>
+Legal
+</h3>
+
+<p>
+<a href="#">Privacy Policy</a>
+</p>
+
+<p>
+<a href="#">Terms & Conditions</a>
+</p>
+
+<p>
+<a href="#">Contact Us</a>
+</p>
+
+</div>
+
+</div>
+
 </footer>
+
+
+<script>
+
+/* =========================
+   SAUDIDEALS PRODUCT DATABASE
+   ========================= */
+
+const products = [
+
+{
+name:"iPhone 16 Pro Max",
+keywords:"iphone iphone 16 pro max apple mobile phone smartphone",
+price:"SAR 4,099",
+store:"Saudi Store",
+icon:"📱"
+},
+
+{
+name:"iPhone 16 Pro",
+keywords:"iphone iphone 16 pro apple mobile smartphone",
+price:"SAR 3,499",
+store:"Saudi Store",
+icon:"📱"
+},
+
+{
+name:"Samsung Galaxy S25 Ultra",
+keywords:"samsung galaxy s25 ultra mobile phone smartphone android",
+price:"SAR 3,299",
+store:"Saudi Store",
+icon:"📱"
+},
+
+{
+name:"Samsung Galaxy A56",
+keywords:"samsung galaxy a56 mobile phone smartphone android",
+price:"SAR 1,299",
+store:"Saudi Store",
+icon:"📱"
+},
+
+{
+name:"MacBook Air M4",
+keywords:"macbook mac apple laptop computer m4",
+price:"SAR 3,999",
+store:"Saudi Store",
+icon:"💻"
+},
+
+{
+name:"Dell Inspiron Laptop",
+keywords:"dell laptop computer inspiron",
+price:"SAR 1,899",
+store:"Saudi Store",
+icon:"💻"
+},
+
+{
+name:"HP Laptop",
+keywords:"hp laptop computer notebook",
+price:"SAR 1,599",
+store:"Saudi Store",
+icon:"💻"
+},
+
+{
+name:"Lenovo IdeaPad",
+keywords:"lenovo laptop computer ideapad",
+price:"SAR 1,299",
+store:"Saudi Store",
+icon:"💻"
+},
+
+{
+name:"PlayStation 5",
+keywords:"ps5 playstation sony gaming console",
+price:"SAR 1,899",
+store:"Saudi Store",
+icon:"🎮"
+},
+
+{
+name:"PlayStation 5 Pro",
+keywords:"ps5 pro playstation sony gaming console",
+price:"SAR 3,649",
+store:"Saudi Store",
+icon:"🎮"
+},
+
+{
+name:"Xbox Series X",
+keywords:"xbox gaming microsoft console series x",
+price:"SAR 1,999",
+store:"Saudi Store",
+icon:"🎮"
+},
+
+{
+name:"Samsung 55-inch 4K TV",
+keywords:"samsung tv television 55 inch 4k",
+price:"SAR 1,699",
+store:"Saudi Store",
+icon:"📺"
+},
+
+{
+name:"LG 55-inch 4K TV",
+keywords:"lg tv television 55 inch 4k",
+price:"SAR 1,799",
+store:"Saudi Store",
+icon:"📺"
+},
+
+{
+name:"AirPods Pro",
+keywords:"airpods apple earbuds headphones earphones",
+price:"SAR 799",
+store:"Saudi Store",
+icon:"🎧"
+}
+
+];
+
+
+/* =========================
+   SEARCH FUNCTION
+   ========================= */
+
+function searchProducts(){
+
+const input = document.getElementById("searchInput");
+
+const query = input.value.trim().toLowerCase();
+
+const searchResults = document.getElementById("searchResults");
+
+const searchMessage = document.getElementById("searchMessage");
+
+const resultsGrid = document.getElementById("resultsGrid");
+
+
+if(query === ""){
+
+searchResults.style.display = "block";
+
+searchMessage.innerHTML =
+"Please type a product name to search.";
+
+resultsGrid.innerHTML = "";
+
+searchResults.scrollIntoView({
+behavior:"smooth"
+});
+
+return;
+
+}
+
+
+/* Find matching products */
+
+const matches = products.filter(function(product){
+
+return (
+product.name.toLowerCase().includes(query) ||
+product.keywords.toLowerCase().includes(query)
+);
+
+});
+
+
+searchResults.style.display = "block";
+
+
+if(matches.length === 0){
+
+searchMessage.innerHTML =
+'No products found for "<strong>' +
+query +
+'</strong>".';
+
+resultsGrid.innerHTML = `
+<div class="no-results">
+Try searching for:
+<strong>iPhone</strong>,
+<strong>Samsung</strong>,
+<strong>Laptop</strong>,
+<strong>PS5</strong>,
+<strong>TV</strong>
+</div>
+`;
+
+}
+
+else{
+
+searchMessage.innerHTML =
+'Found <strong>' +
+matches.length +
+'</strong> product(s) for "<strong>' +
+query +
+'</strong>".';
+
+
+resultsGrid.innerHTML = "";
+
+
+matches.forEach(function(product){
+
+resultsGrid.innerHTML += `
+
+<div class="result-card">
+
+<div class="result-icon">
+${product.icon}
+</div>
+
+<h3>
+${product.name}
+</h3>
+
+<div class="result-price">
+${product.price}
+</div>
+
+<div class="result-store">
+${product.store}
+</div>
+
+<a
+class="result-button"
+href="#"
+onclick="alert('Affiliate store link will be connected here later.')"
+>
+View Deal
+</a>
+
+</div>
+
+`;
+
+});
+
+}
+
+
+searchResults.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+/* =========================
+   SEARCH BUTTON
+   ========================= */
+
+document
+.getElementById("searchButton")
+.addEventListener("click", searchProducts);
+
+
+/* =========================
+   ENTER KEY SEARCH
+   ========================= */
+
+document
+.getElementById("searchInput")
+.addEventListener("keydown", function(event){
+
+if(event.key === "Enter"){
+
+searchProducts();
+
+}
+
+});
+
+
+</script>
+
 
 </body>
 </html>
