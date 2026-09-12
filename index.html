@@ -1,1 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SaudiDeals - Compare prices and find the best deals in Saudi Arabia.">
+  <title>SaudiDeals - Best Prices in Saudi Arabia</title>
 
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f6f7f9;
+      color: #171717;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .topbar {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .logo {
+      font-size: 27px;
+      font-weight: 800;
+      color: #087443;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: #111827;
+    }
+
+    .search {
+      flex: 1;
+      display: flex;
+      background: #f3f4f6;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+    }
+
+    .search input {
+      flex: 1;
+      border: 0;
+      background: transparent;
+      padding: 14px;
+      outline: none;
+      font-size: 15px;
+    }
+
+    .search button {
+      border: 0;
+      background: #087443;
+      color: white;
+      padding: 0 22px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px 15px;
+      display: flex;
+      gap: 22px;
+      overflow-x: auto;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #444;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .hero {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 55px 35px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #087443, #0b9a59);
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      max-width: 650px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 650px;
+      line-height: 1.6;
+      opacity: 0.95;
+    }
+
+    .hero-button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 13px 22px;
+      background: white;
+      color: #087443;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px 40px;
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 35px 0 18px;
+    }
+
+    .section-title h2 {
+      font-size: 25px;
+    }
+
+    .section-title a {
+      color: #087443;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 12px;
+    }
+
+    .category {
+      background: white;
+      border: 1px solid #e5e7eb;
+      padding: 20px 10px;
+      border-radius: 14px;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .category:hover {
+      transform: translateY(-3px);
+      border-color: #087443;
+    }
+
+    .category .icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .category p {
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 15px;
+      border: 1px solid #e5e7eb;
+      padding: 15px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-image {
+      height: 170px;
+      background: #f3f4f6;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 60px;
+      margin-bottom: 15px;
+    }
+
+    .product h3 {
+      font-size: 16px;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 22px;
+      font-weight: 800;
+      color: #087443;
+    }
+
+    .old-price {
+      color: #999;
+      text-decoration: line-through;
+      font-size: 13px;
+      margin-left: 6px;
+    }
+
+    .store {
+      color: #777;
+      font-size: 13px;
+      margin-top: 7px;
+    }
+
+    .compare {
+      display: block;
+      text-align: center;
+      background: #087443;
+      color: white;
+      text-decoration: none;
+      padding: 11px;
+      border-radius: 9px;
+      margin-top: 15px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .comparison {
+      background: white;
+      border-radius: 18px;
+      border: 1px solid #e5e7eb;
+      padding: 25px;
+      margin-top: 20px;
+    }
+
+    .comparison p {
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .stores {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .store-box {
+      background: white;
+      padding: 25px 15px;
+      border-radius: 14px;
+      border: 1px solid #e5e7eb;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #111827;
+      color: white;
+      margin-top: 50px;
+      padding: 40px 20px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    footer h3 {
+      margin-bottom: 12px;
+    }
+
+    footer p,
+    footer a {
+      color: #cbd5e1;
+      font-size: 14px;
+      line-height: 1.8;
+      text-decoration: none;
+    }
+
+    @media (max-width: 900px) {
+      .categories {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stores {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .topbar {
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .logo {
+        width: 100%;
+      }
+
+      .search {
+        width: 100%;
+      }
+
+      .categories {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .products {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .product {
+        padding: 10px;
+      }
+
+      .product-image {
+        height: 130px;
+      }
+
+      .stores {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        margin: 20px;
+        padding: 35px 25px;
+      }
+
+      .container {
+        padding: 0 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="topbar">
+    <div class="logo">Saudi<span>Deals</span></div>
+
+    <div class="search">
+      <input type="text" placeholder="Search products in Saudi Arabia...">
+      <button>Search</button>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <a href="#">Home</a>
+    <a href="#">Today's Deals</a>
+    <a href="#">Mobiles</a>
+    <a href="#">Laptops</a>
+    <a href="#">Gaming</a>
+    <a href="#">Electronics</a>
+    <a href="#">Home & Kitchen</a>
+    <a href="#">Fashion</a>
+    <a href="#">Beauty</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Find the Best Prices in Saudi Arabia 🇸🇦</h1>
+  <p>
+    Compare products, discover amazing deals and find the best prices
+    from Saudi shopping stores — all in one place.
+  </p>
+
+  <a href="#deals" class="hero-button">Explore Deals</a>
+</section>
+
+<main class="container">
+
+  <div class="section-title">
+    <h2>Shop by Category</h2>
+    <a href="#">View All</a>
+  </div>
+
+  <div class="categories">
+
+    <div class="category">
+      <div class="icon">📱</div>
+      <p>Mobiles & Tablets</p>
+    </div>
+
+    <div class="category">
+      <div class="icon">💻</div>
+      <p>Laptops & Computers</p>
+    </div>
+
+    <div class="category">
+      <div class="icon">🎮</div>
+      <p>Gaming</p>
+    </div>
+
+    <div class="category">
+      <div class="icon">📺</div>
+      <p>TV & Electronics</p>
+    </div>
+
+    <div class="category">
+      <div class="icon">🏠</div>
+      <p>Home & Kitchen</p>
+    </div>
+
+    <div class="category">
+      <div class="icon">👕</div>
+      <p>Fashion</p>
+    </div>
+
+    <div class="category">
+      <div class="icon">💄</div>
+      <p>Beauty</p>
+    </div>
+
+  </div>
+
+  <div class="section-title" id="deals">
+    <h2>🔥 Today's Best Deals</h2>
+    <a href="#">See All Deals</a>
+  </div>
+
+  <div class="products">
+
+    <div class="product">
+      <div class="product-image">📱</div>
+      <h3>Smartphone Deals</h3>
+      <div>
+        <span class="price">From SAR 499</span>
+      </div>
+      <div class="store">Compare Saudi stores</div>
+      <a class="compare" href="#">Compare Prices</a>
+    </div>
+
+    <div class="product">
+      <div class="product-image">💻</div>
+      <h3>Laptop Deals</h3>
+      <div>
+        <span class="price">From SAR 999</span>
+      </div>
+      <div class="store">Compare Saudi stores</div>
+      <a class="compare" href="#">Compare Prices</a>
+    </div>
+
+    <div class="product">
+      <div class="product-image">🎮</div>
+      <h3>Gaming Deals</h3>
+      <div>
+        <span class="price">From SAR 799</span>
+      </div>
+      <div class="store">Compare Saudi stores</div>
+      <a class="compare" href="#">Compare Prices</a>
+    </div>
+
+    <div class="product">
+      <div class="product-image">📺</div>
+      <h3>TV & Electronics Deals</h3>
+      <div>
+        <span class="price">From SAR 599</span>
+      </div>
+      <div class="store">Compare Saudi stores</div>
+      <a class="compare" href="#">Compare Prices</a>
+    </div>
+
+  </div>
+
+  <div class="section-title">
+    <h2>💰 How SaudiDeals Works</h2>
+  </div>
+
+  <div class="comparison">
+    <h3>Find → Compare → Save</h3>
+    <br>
+    <p>
+      Search for a product on SaudiDeals. We will show prices from different
+      shopping stores so you can compare them and choose the best deal.
+    </p>
+  </div>
+
+  <div class="section-title">
+    <h2>🏪 Shopping Stores</h2>
+  </div>
+
+  <div class="stores">
+    <div class="store-box">Amazon.sa</div>
+    <div class="store-box">Noon</div>
+    <div class="store-box">Jarir</div>
+    <div class="store-box">eXtra</div>
+    <div class="store-box">Other Stores</div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+
+    <div>
+      <h3>SaudiDeals 🇸🇦</h3>
+      <p>
+        SaudiDeals helps shoppers in Saudi Arabia discover,
+        compare and find better prices online.
+      </p>
+    </div>
+
+    <div>
+      <h3>Quick Links</h3>
+      <p><a href="#">Home</a></p>
+      <p><a href="#">Deals</a></p>
+      <p><a href="#">Categories</a></p>
+      <p><a href="#">About Us</a></p>
+    </div>
+
+    <div>
+      <h3>Legal</h3>
+      <p><a href="#">Privacy Policy</a></p>
+      <p><a href="#">Terms & Conditions</a></p>
+      <p><a href="#">Contact Us</a></p>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
