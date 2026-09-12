@@ -2,633 +2,740 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>SaudiDeals - Compare Prices & Find Best Deals in Saudi Arabia</title>
+<title>SaudiDeals — Compare Prices & Find the Best Deals in Saudi Arabia</title>
 
-<meta name="description" content="SaudiDeals helps you compare product prices and discover the best shopping deals in Saudi Arabia.">
-<meta name="theme-color" content="#111827">
+<meta name="description" content="SaudiDeals helps shoppers in Saudi Arabia compare product prices and discover the best online shopping deals.">
+<meta name="keywords" content="Saudi deals, Saudi Arabia shopping, price comparison, Noon, Amazon Saudi, Jarir, electronics deals">
+<meta name="author" content="SaudiDeals">
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-    background: #f5f7fb;
-    color: #111827;
-    line-height: 1.5;
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f7fa;
+    color:#172033;
+    line-height:1.5;
 }
 
 button,
-input {
-    font: inherit;
+input{
+    font:inherit;
 }
 
-button {
-    cursor: pointer;
+button{
+    cursor:pointer;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+.container{
+    width:min(1200px,92%);
+    margin:auto;
 }
 
 /* HEADER */
 
-.header {
-    background: #111827;
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,.15);
+header{
+    background:#fff;
+    border-bottom:1px solid #e5e7eb;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
-.header-inner {
-    max-width: 1200px;
-    margin: auto;
-    padding: 14px 18px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.navbar{
+    min-height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
 }
 
-.logo {
-    font-size: 25px;
-    font-weight: 800;
-    white-space: nowrap;
+.logo{
+    font-size:26px;
+    font-weight:800;
+    color:#0f766e;
+    white-space:nowrap;
+    cursor:pointer;
 }
 
-.logo span {
-    color: #22c55e;
+.logo span{
+    color:#f59e0b;
 }
 
-.search-box {
-    flex: 1;
-    display: flex;
-    max-width: 600px;
-    margin: auto;
+.nav-links{
+    display:flex;
+    gap:22px;
+    align-items:center;
 }
 
-.search-box input {
-    width: 100%;
-    padding: 12px 15px;
-    border: 0;
-    outline: none;
-    border-radius: 10px 0 0 10px;
-    background: white;
-    color: #111827;
+.nav-links button{
+    background:none;
+    border:0;
+    color:#374151;
+    font-weight:600;
 }
 
-.search-box button {
-    border: 0;
-    background: #22c55e;
-    color: white;
-    padding: 0 18px;
-    border-radius: 0 10px 10px 0;
-    font-weight: 700;
+.nav-links button:hover{
+    color:#0f766e;
 }
 
-.header-wishlist {
-    background: transparent;
-    border: 1px solid #374151;
-    color: white;
-    padding: 9px 13px;
-    border-radius: 8px;
+.header-search{
+    display:flex;
+    border:1px solid #d1d5db;
+    border-radius:10px;
+    overflow:hidden;
+    width:300px;
+    background:#fff;
 }
 
-/* NAV */
-
-.nav {
-    background: white;
-    border-bottom: 1px solid #e5e7eb;
+.header-search input{
+    border:0;
+    outline:0;
+    padding:11px 13px;
+    width:100%;
 }
 
-.nav-inner {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    gap: 8px;
-    overflow-x: auto;
-    padding: 9px 18px;
-}
-
-.nav button {
-    border: 0;
-    background: transparent;
-    padding: 8px 13px;
-    white-space: nowrap;
-    color: #374151;
-    border-radius: 7px;
-}
-
-.nav button:hover {
-    background: #f3f4f6;
+.header-search button{
+    border:0;
+    background:#0f766e;
+    color:#fff;
+    padding:0 15px;
 }
 
 /* HERO */
 
-.hero {
-    background: linear-gradient(135deg, #111827, #1f2937);
-    color: white;
+.hero{
+    background:linear-gradient(135deg,#0f766e,#115e59);
+    color:#fff;
+    padding:65px 0;
 }
 
-.hero-inner {
-    max-width: 1200px;
-    margin: auto;
-    padding: 55px 18px;
+.hero-content{
+    text-align:center;
+    max-width:800px;
+    margin:auto;
 }
 
-.hero h1 {
-    font-size: clamp(32px, 6vw, 52px);
-    max-width: 700px;
-    line-height: 1.05;
-    margin-bottom: 15px;
+.hero h1{
+    font-size:46px;
+    line-height:1.15;
+    margin-bottom:18px;
 }
 
-.hero p {
-    max-width: 650px;
-    color: #d1d5db;
-    font-size: 17px;
+.hero h1 span{
+    color:#fbbf24;
 }
 
-.hero-search {
-    margin-top: 25px;
-    display: flex;
-    max-width: 650px;
+.hero p{
+    font-size:18px;
+    color:#dff7f5;
+    margin-bottom:28px;
 }
 
-.hero-search input {
-    flex: 1;
-    padding: 15px;
-    border: 0;
-    border-radius: 10px 0 0 10px;
-    outline: none;
+.hero-search{
+    background:#fff;
+    padding:7px;
+    border-radius:13px;
+    display:flex;
+    max-width:700px;
+    margin:auto;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
 
-.hero-search button {
-    padding: 0 22px;
-    border: 0;
-    background: #22c55e;
-    color: white;
-    border-radius: 0 10px 10px 0;
-    font-weight: 700;
+.hero-search input{
+    flex:1;
+    border:0;
+    outline:0;
+    padding:14px;
+    color:#111827;
 }
 
-/* MAIN */
-
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 35px 18px;
+.hero-search button{
+    background:#f59e0b;
+    color:#111827;
+    border:0;
+    border-radius:9px;
+    padding:0 24px;
+    font-weight:800;
 }
 
-.section {
-    margin-bottom: 45px;
+/* STATUS */
+
+.db-status{
+    margin-top:18px;
+    font-size:13px;
+    min-height:20px;
 }
 
-.section-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 18px;
+.status-success{
+    color:#bbf7d0;
 }
 
-.section-title h2 {
-    font-size: 25px;
+.status-warning{
+    color:#fde68a;
+}
+
+.status-error{
+    color:#fecaca;
 }
 
 /* CATEGORIES */
 
-.categories {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 12px;
+.section{
+    padding:45px 0;
 }
 
-.category {
-    background: white;
-    padding: 18px 10px;
-    border-radius: 12px;
-    text-align: center;
-    border: 1px solid #e5e7eb;
-    transition: .2s;
+.section-title{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:25px;
 }
 
-.category:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+.section-title h2{
+    font-size:28px;
 }
 
-.category-icon {
-    font-size: 28px;
-    margin-bottom: 8px;
+.categories{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:12px;
 }
 
-.category-name {
-    font-size: 13px;
-    font-weight: 600;
+.category-btn{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:12px;
+    padding:17px 10px;
+    text-align:center;
+    font-weight:700;
+    color:#374151;
+    transition:.2s;
+}
+
+.category-btn:hover{
+    border-color:#0f766e;
+    color:#0f766e;
+    transform:translateY(-2px);
+}
+
+.category-icon{
+    display:block;
+    font-size:27px;
+    margin-bottom:6px;
 }
 
 /* PRODUCTS */
 
-.products {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
 }
 
-.product-card {
-    background: white;
-    border-radius: 14px;
-    overflow: hidden;
-    border: 1px solid #e5e7eb;
-    transition: .2s;
-    position: relative;
+.product-card{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:15px;
+    overflow:hidden;
+    transition:.2s;
+    position:relative;
 }
 
-.product-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+.product-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
-.product-image {
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f9fafb;
-    font-size: 72px;
+.product-image{
+    height:210px;
+    background:#f8fafc;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:15px;
+    position:relative;
 }
 
-.product-content {
-    padding: 15px;
+.product-image img{
+    max-width:100%;
+    max-height:180px;
+    object-fit:contain;
 }
 
-.product-category {
-    color: #6b7280;
-    font-size: 12px;
-    margin-bottom: 5px;
+.product-placeholder{
+    font-size:70px;
 }
 
-.product-name {
-    font-size: 16px;
-    font-weight: 700;
-    min-height: 48px;
+.wishlist-btn{
+    position:absolute;
+    right:10px;
+    top:10px;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    border:1px solid #e5e7eb;
+    background:#fff;
+    font-size:20px;
+    z-index:2;
 }
 
-.price {
-    color: #16a34a;
-    font-size: 21px;
-    font-weight: 800;
-    margin-top: 10px;
+.wishlist-btn.active{
+    color:#ef4444;
 }
 
-.old-price {
-    color: #9ca3af;
-    font-size: 13px;
-    text-decoration: line-through;
+.product-info{
+    padding:16px;
 }
 
-.deal-label {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: #ef4444;
-    color: white;
-    padding: 5px 8px;
-    border-radius: 6px;
-    font-size: 11px;
-    font-weight: 700;
+.product-store{
+    color:#6b7280;
+    font-size:12px;
+    margin-bottom:4px;
 }
 
-.card-buttons {
-    display: flex;
-    gap: 8px;
-    margin-top: 14px;
+.product-name{
+    font-size:17px;
+    font-weight:750;
+    min-height:51px;
+    margin-bottom:10px;
 }
 
-.view-button {
-    flex: 1;
-    border: 0;
-    background: #111827;
-    color: white;
-    padding: 10px;
-    border-radius: 8px;
-    font-weight: 600;
+.product-price{
+    font-size:23px;
+    font-weight:800;
+    color:#0f766e;
 }
 
-.wish-button {
-    width: 42px;
-    border: 1px solid #d1d5db;
-    background: white;
-    border-radius: 8px;
+.old-price{
+    color:#9ca3af;
+    text-decoration:line-through;
+    font-size:14px;
+    margin-left:7px;
 }
 
-/* PRODUCT PAGE */
-
-.page {
-    display: none;
+.discount{
+    display:inline-block;
+    margin-top:7px;
+    background:#dcfce7;
+    color:#166534;
+    padding:3px 8px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:700;
 }
 
-.page.active {
-    display: block;
+.product-actions{
+    display:flex;
+    gap:8px;
+    margin-top:14px;
 }
 
-.product-detail {
-    max-width: 1100px;
-    margin: auto;
-    padding: 30px 18px;
+.product-actions button{
+    flex:1;
+    border-radius:8px;
+    padding:10px;
+    border:0;
+    font-weight:700;
 }
 
-.back-button {
-    border: 0;
-    background: #e5e7eb;
-    padding: 10px 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    font-weight: 600;
+.view-btn{
+    background:#e6fffb;
+    color:#0f766e;
 }
 
-.detail-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+.deal-btn{
+    background:#0f766e;
+    color:#fff;
 }
 
-.detail-image {
-    background: white;
-    border-radius: 15px;
-    min-height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 140px;
-    border: 1px solid #e5e7eb;
+/* EMPTY */
+
+.empty-state{
+    background:#fff;
+    border:1px dashed #cbd5e1;
+    border-radius:15px;
+    padding:45px 20px;
+    text-align:center;
+    color:#64748b;
+    grid-column:1/-1;
 }
 
-.detail-info {
-    background: white;
-    border-radius: 15px;
-    padding: 30px;
-    border: 1px solid #e5e7eb;
-}
-
-.detail-info h1 {
-    font-size: 32px;
-    margin-bottom: 12px;
-}
-
-.detail-price {
-    font-size: 32px;
-    color: #16a34a;
-    font-weight: 800;
-    margin: 20px 0;
-}
-
-.detail-description {
-    color: #6b7280;
-    margin-bottom: 25px;
-}
-
-.compare-table {
-    margin-top: 30px;
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    border: 1px solid #e5e7eb;
-}
-
-.compare-table h2 {
-    padding: 20px;
-}
-
-.table-wrapper {
-    overflow-x: auto;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 650px;
-}
-
-th,
-td {
-    padding: 15px;
-    border-top: 1px solid #e5e7eb;
-    text-align: left;
-}
-
-th {
-    background: #f9fafb;
-}
-
-.merchant-price {
-    color: #16a34a;
-    font-weight: 800;
-}
-
-.merchant-button {
-    background: #111827;
-    color: white;
-    border: 0;
-    padding: 8px 12px;
-    border-radius: 7px;
+.empty-state h3{
+    margin-bottom:8px;
+    color:#334155;
 }
 
 /* SEARCH */
 
-.search-results-header {
-    margin-bottom: 25px;
+.search-page{
+    padding:40px 0;
 }
 
-.no-results {
-    background: white;
-    padding: 40px;
-    border-radius: 12px;
-    text-align: center;
+.search-heading{
+    margin-bottom:25px;
 }
 
-/* INFO */
-
-.info-box {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    border: 1px solid #e5e7eb;
-    margin-bottom: 20px;
+.search-heading h2{
+    margin-bottom:5px;
 }
 
-.info-box h2 {
-    margin-bottom: 12px;
+/* PRODUCT DETAIL */
+
+.detail-page{
+    padding:45px 0;
 }
 
-.info-box p {
-    color: #4b5563;
-    margin-bottom: 10px;
+.back-btn{
+    border:0;
+    background:none;
+    color:#0f766e;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.detail-card{
+    background:#fff;
+    border:1px solid #e5e7eb;
+    border-radius:18px;
+    padding:30px;
+}
+
+.detail-top{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:45px;
+}
+
+.detail-image{
+    min-height:400px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#f8fafc;
+    border-radius:14px;
+    padding:30px;
+}
+
+.detail-image img{
+    max-width:100%;
+    max-height:380px;
+    object-fit:contain;
+}
+
+.detail-placeholder{
+    font-size:120px;
+}
+
+.detail-info h1{
+    font-size:32px;
+    margin-bottom:12px;
+}
+
+.detail-category{
+    color:#6b7280;
+    margin-bottom:20px;
+}
+
+.detail-description{
+    color:#4b5563;
+    margin:20px 0;
+}
+
+.detail-price{
+    font-size:34px;
+    color:#0f766e;
+    font-weight:800;
+    margin:20px 0;
+}
+
+.comparison{
+    margin-top:35px;
+}
+
+.comparison h2{
+    margin-bottom:15px;
+}
+
+.comparison-table{
+    width:100%;
+    border-collapse:collapse;
+    background:#fff;
+    overflow:hidden;
+    border-radius:10px;
+}
+
+.comparison-table th,
+.comparison-table td{
+    padding:14px;
+    border-bottom:1px solid #e5e7eb;
+    text-align:left;
+}
+
+.comparison-table th{
+    background:#f8fafc;
+}
+
+.buy-btn{
+    background:#0f766e;
+    color:#fff;
+    border:0;
+    padding:8px 14px;
+    border-radius:7px;
+    font-weight:700;
+}
+
+/* INFO PAGES */
+
+.info-page{
+    padding:50px 0;
+}
+
+.info-card{
+    background:#fff;
+    border-radius:16px;
+    border:1px solid #e5e7eb;
+    padding:35px;
+}
+
+.info-card h1{
+    margin-bottom:20px;
+}
+
+.info-card h2{
+    margin:25px 0 10px;
+}
+
+.info-card p{
+    color:#4b5563;
+    margin-bottom:14px;
 }
 
 /* FOOTER */
 
-.footer {
-    background: #111827;
-    color: white;
-    margin-top: 50px;
+footer{
+    background:#111827;
+    color:#d1d5db;
+    margin-top:50px;
+    padding:45px 0 25px;
 }
 
-.footer-inner {
-    max-width: 1200px;
-    margin: auto;
-    padding: 40px 18px;
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:30px;
 }
 
-.footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 30px;
+footer h3{
+    color:#fff;
+    margin-bottom:14px;
 }
 
-.footer h3 {
-    margin-bottom: 12px;
+footer p{
+    color:#9ca3af;
 }
 
-.footer p {
-    color: #9ca3af;
+.footer-links{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
 }
 
-.footer button {
-    display: block;
-    background: none;
-    border: 0;
-    color: #d1d5db;
-    margin: 7px 0;
+.footer-links button{
+    background:none;
+    border:0;
+    color:#9ca3af;
+    text-align:left;
 }
 
-.footer-bottom {
-    border-top: 1px solid #374151;
-    margin-top: 30px;
-    padding-top: 20px;
-    color: #9ca3af;
-    font-size: 13px;
+.footer-links button:hover{
+    color:#fff;
+}
+
+.copyright{
+    border-top:1px solid #374151;
+    margin-top:30px;
+    padding-top:20px;
+    text-align:center;
+    color:#9ca3af;
+    font-size:13px;
+}
+
+/* LOADING */
+
+.loading{
+    padding:45px;
+    text-align:center;
+    color:#64748b;
+    grid-column:1/-1;
+}
+
+.spinner{
+    width:30px;
+    height:30px;
+    border:3px solid #e5e7eb;
+    border-top-color:#0f766e;
+    border-radius:50%;
+    animation:spin .8s linear infinite;
+    margin:0 auto 12px;
+}
+
+@keyframes spin{
+    to{transform:rotate(360deg)}
 }
 
 /* MOBILE */
 
-@media (max-width: 900px) {
+@media(max-width:1000px){
 
-    .products {
-        grid-template-columns: repeat(3, 1fr);
+    .categories{
+        grid-template-columns:repeat(4,1fr);
     }
 
-    .categories {
-        grid-template-columns: repeat(4, 1fr);
+    .product-grid{
+        grid-template-columns:repeat(3,1fr);
     }
 
-}
-
-@media (max-width: 650px) {
-
-    .header-inner {
-        flex-wrap: wrap;
-        gap: 10px;
+    .header-search{
+        width:230px;
     }
 
-    .logo {
-        font-size: 22px;
-    }
-
-    .search-box {
-        order: 3;
-        flex-basis: 100%;
-    }
-
-    .header-wishlist {
-        margin-left: auto;
-    }
-
-    .hero-inner {
-        padding: 40px 18px;
-    }
-
-    .hero h1 {
-        font-size: 35px;
-    }
-
-    .categories {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .products {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
-
-    .product-image {
-        height: 150px;
-        font-size: 55px;
-    }
-
-    .product-content {
-        padding: 11px;
-    }
-
-    .product-name {
-        font-size: 14px;
-    }
-
-    .price {
-        font-size: 18px;
-    }
-
-    .detail-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .detail-image {
-        min-height: 280px;
-        font-size: 100px;
-    }
-
-    .detail-info {
-        padding: 20px;
-    }
-
-    .detail-info h1 {
-        font-size: 25px;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr;
+    .nav-links{
+        gap:12px;
     }
 }
 
-@media (max-width: 380px) {
+@media(max-width:760px){
 
-    .products {
-        grid-template-columns: 1fr 1fr;
+    .navbar{
+        flex-wrap:wrap;
+        padding:12px 0;
     }
 
-    .product-image {
-        height: 130px;
+    .header-search{
+        order:3;
+        width:100%;
     }
 
-    .card-buttons {
-        flex-direction: column;
+    .nav-links{
+        margin-left:auto;
     }
 
-    .wish-button {
-        width: 100%;
-        height: 38px;
+    .nav-links button:nth-child(2),
+    .nav-links button:nth-child(3){
+        display:none;
+    }
+
+    .hero{
+        padding:45px 0;
+    }
+
+    .hero h1{
+        font-size:35px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .hero-search{
+        flex-direction:column;
+        gap:7px;
+    }
+
+    .hero-search button{
+        padding:13px;
+    }
+
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .product-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
+    }
+
+    .product-image{
+        height:160px;
+    }
+
+    .product-name{
+        font-size:15px;
+        min-height:45px;
+    }
+
+    .product-price{
+        font-size:19px;
+    }
+
+    .product-actions{
+        flex-direction:column;
+    }
+
+    .detail-top{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .detail-image{
+        min-height:280px;
+    }
+
+    .detail-info h1{
+        font-size:26px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:450px){
+
+    .product-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .product-image{
+        height:145px;
+    }
+
+    .product-placeholder{
+        font-size:50px;
+    }
+
+    .product-info{
+        padding:11px;
+    }
+
+    .product-actions button{
+        padding:8px;
+        font-size:12px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .comparison-table{
+        font-size:13px;
+    }
+
+    .comparison-table th,
+    .comparison-table td{
+        padding:9px;
     }
 }
 </style>
@@ -636,584 +743,417 @@ th {
 
 <body>
 
-<!-- HEADER -->
+<header>
+    <div class="container navbar">
 
-<header class="header">
-    <div class="header-inner">
+        <div class="logo" onclick="goHome()">Saudi<span>Deals</span></div>
 
-        <button class="logo" onclick="goHome()" style="background:none;border:0;color:white;">
-            Saudi<span>Deals</span>
-        </button>
+        <div class="nav-links">
+            <button onclick="goHome()">Home</button>
+            <button onclick="showWishlist()">♡ Wishlist</button>
+            <button onclick="showInfo('about')">About</button>
+        </div>
 
-        <div class="search-box">
+        <div class="header-search">
             <input
                 id="topSearch"
                 type="search"
                 placeholder="Search products..."
                 autocomplete="off"
             >
-            <button onclick="performSearch()">Search</button>
+            <button onclick="performHeroSearch()">Search</button>
         </div>
-
-        <button class="header-wishlist" onclick="showWishlist()">
-            ❤️ Wishlist
-        </button>
 
     </div>
 </header>
 
-<!-- NAVIGATION -->
 
-<nav class="nav">
-    <div class="nav-inner">
+<main id="app"></main>
 
-        <button onclick="goHome()">Home</button>
 
-        <button onclick="performSearch('Mobiles & Tablets')">
-            Mobiles
-        </button>
+<footer>
 
-        <button onclick="performSearch('Laptops & Computers')">
-            Laptops
-        </button>
-
-        <button onclick="performSearch('Gaming')">
-            Gaming
-        </button>
-
-        <button onclick="performSearch('TV & Electronics')">
-            TV & Electronics
-        </button>
-
-        <button onclick="performSearch('Home & Kitchen')">
-            Home & Kitchen
-        </button>
-
-        <button onclick="performSearch('Fashion')">
-            Fashion
-        </button>
-
-        <button onclick="performSearch('Beauty')">
-            Beauty
-        </button>
-
-    </div>
-</nav>
-
-<!-- HOME -->
-
-<div id="homePage" class="page active">
-
-    <section class="hero">
-
-        <div class="hero-inner">
-
-            <h1>Find the Best Deals in Saudi Arabia</h1>
-
-            <p>
-                Compare prices, discover deals and find the best shopping offers
-                from Saudi stores in one place.
-            </p>
-
-            <div class="hero-search">
-
-                <input
-                    id="heroSearch"
-                    type="search"
-                    placeholder="What are you looking for?"
-                >
-
-                <button onclick="performHeroSearch()">
-                    Search
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <main class="container">
-
-        <!-- CATEGORIES -->
-
-        <section class="section">
-
-            <div class="section-title">
-                <h2>Shop by Category</h2>
-            </div>
-
-            <div class="categories">
-
-                <button class="category" onclick="performSearch('Mobiles & Tablets')">
-                    <div class="category-icon">📱</div>
-                    <div class="category-name">Mobiles & Tablets</div>
-                </button>
-
-                <button class="category" onclick="performSearch('Laptops & Computers')">
-                    <div class="category-icon">💻</div>
-                    <div class="category-name">Laptops & Computers</div>
-                </button>
-
-                <button class="category" onclick="performSearch('Gaming')">
-                    <div class="category-icon">🎮</div>
-                    <div class="category-name">Gaming</div>
-                </button>
-
-                <button class="category" onclick="performSearch('TV & Electronics')">
-                    <div class="category-icon">📺</div>
-                    <div class="category-name">TV & Electronics</div>
-                </button>
-
-                <button class="category" onclick="performSearch('Home & Kitchen')">
-                    <div class="category-icon">🏠</div>
-                    <div class="category-name">Home & Kitchen</div>
-                </button>
-
-                <button class="category" onclick="performSearch('Fashion')">
-                    <div class="category-icon">👕</div>
-                    <div class="category-name">Fashion</div>
-                </button>
-
-                <button class="category" onclick="performSearch('Beauty')">
-                    <div class="category-icon">💄</div>
-                    <div class="category-name">Beauty</div>
-                </button>
-
-            </div>
-
-        </section>
-
-        <!-- DEALS -->
-
-        <section class="section">
-
-            <div class="section-title">
-                <h2>🔥 Today's Best Deals</h2>
-            </div>
-
-            <div id="homeProducts" class="products"></div>
-
-        </section>
-
-    </main>
-
-</div>
-
-<!-- SEARCH PAGE -->
-
-<div id="searchPage" class="page">
-
-    <main class="container">
-
-        <button class="back-button" onclick="goHome()">
-            ← Home
-        </button>
-
-        <div class="search-results-header">
-            <h1 id="searchTitle">Search Results</h1>
-            <p id="searchDescription"></p>
-        </div>
-
-        <div id="searchProducts" class="products"></div>
-
-    </main>
-
-</div>
-
-<!-- PRODUCT PAGE -->
-
-<div id="productPage" class="page">
-
-    <div class="product-detail">
-
-        <button class="back-button" onclick="browserBack()">
-            ← Back
-        </button>
-
-        <div id="productContent"></div>
-
-    </div>
-
-</div>
-
-<!-- WISHLIST PAGE -->
-
-<div id="wishlistPage" class="page">
-
-    <main class="container">
-
-        <button class="back-button" onclick="goHome()">
-            ← Home
-        </button>
-
-        <div class="section-title">
-            <h2>❤️ My Wishlist</h2>
-        </div>
-
-        <div id="wishlistProducts" class="products"></div>
-
-    </main>
-
-</div>
-
-<!-- INFO PAGE -->
-
-<div id="infoPage" class="page">
-
-    <main class="container">
-
-        <button class="back-button" onclick="goHome()">
-            ← Home
-        </button>
-
-        <div id="infoContent"></div>
-
-    </main>
-
-</div>
-
-<!-- FOOTER -->
-
-<footer class="footer">
-
-    <div class="footer-inner">
+    <div class="container">
 
         <div class="footer-grid">
 
             <div>
                 <h3>SaudiDeals</h3>
                 <p>
-                    Compare prices and discover the best deals
-                    available in Saudi Arabia.
+                    Compare prices, discover deals and find better shopping
+                    options from online stores in Saudi Arabia.
                 </p>
+            </div>
+
+            <div>
+                <h3>Explore</h3>
+
+                <div class="footer-links">
+                    <button onclick="goHome()">Home</button>
+                    <button onclick="performSearch('')">Deals</button>
+                    <button onclick="showWishlist()">Wishlist</button>
+                </div>
             </div>
 
             <div>
                 <h3>Information</h3>
 
-                <button onclick="showInfo('about')">
-                    About Us
-                </button>
-
-                <button onclick="showInfo('affiliate')">
-                    Affiliate Disclosure
-                </button>
-
-                <button onclick="showInfo('privacy')">
-                    Privacy Policy
-                </button>
-
-                <button onclick="showInfo('terms')">
-                    Terms & Conditions
-                </button>
-
+                <div class="footer-links">
+                    <button onclick="showInfo('about')">About Us</button>
+                    <button onclick="showInfo('affiliate')">Affiliate Disclosure</button>
+                    <button onclick="showInfo('privacy')">Privacy Policy</button>
+                    <button onclick="showInfo('terms')">Terms</button>
+                </div>
             </div>
 
             <div>
-                <h3>Help</h3>
+                <h3>Contact</h3>
 
-                <button onclick="showInfo('contact')">
-                    Contact Us
-                </button>
-
+                <div class="footer-links">
+                    <button onclick="showInfo('contact')">Contact Us</button>
+                </div>
             </div>
 
         </div>
 
-        <div class="footer-bottom">
+        <div class="copyright">
             © 2026 SaudiDeals. All rights reserved.
-            <br><br>
-            Demo website — product prices shown are sample data until
-            real merchant feeds and affiliate links are connected.
         </div>
 
     </div>
 
 </footer>
 
+
 <script>
 
 /* =========================================================
-   SAUDIDEALS V1
-   FULL NAVIGATION SYSTEM
+   SAUDIDEALS CONFIGURATION
    ========================================================= */
 
+const SUPABASE_URL =
+    "https://frkzfzhcgtfgadvvqgje.supabase.co";
 
-/* PRODUCT DATABASE */
-
-const products = [
-
-    {
-        id: "iphone-16-pro-max",
-        name: "iPhone 16 Pro Max",
-        category: "Mobiles & Tablets",
-        price: 4099,
-        oldPrice: 4599,
-        icon: "📱",
-        description: "Apple iPhone 16 Pro Max with premium performance and camera system.",
-        merchants: {
-            "Amazon.sa": 4099,
-            "Noon": 4149,
-            "Jarir": 4299,
-            "eXtra": 4199
-        }
-    },
-
-    {
-        id: "iphone-16-pro",
-        name: "iPhone 16 Pro",
-        category: "Mobiles & Tablets",
-        price: 3499,
-        oldPrice: 3899,
-        icon: "📱",
-        description: "Apple iPhone 16 Pro with advanced performance and professional camera features.",
-        merchants: {
-            "Amazon.sa": 3499,
-            "Noon": 3549,
-            "Jarir": 3599,
-            "eXtra": 3699
-        }
-    },
-
-    {
-        id: "samsung-s25-ultra",
-        name: "Samsung Galaxy S25 Ultra",
-        category: "Mobiles & Tablets",
-        price: 3299,
-        oldPrice: 3799,
-        icon: "📱",
-        description: "Samsung flagship smartphone with high-end display, camera and performance.",
-        merchants: {
-            "Amazon.sa": 3299,
-            "Noon": 3399,
-            "Jarir": 3499,
-            "eXtra": 3599
-        }
-    },
-
-    {
-        id: "samsung-a56",
-        name: "Samsung Galaxy A56",
-        category: "Mobiles & Tablets",
-        price: 1299,
-        oldPrice: 1499,
-        icon: "📱",
-        description: "Samsung Galaxy A56 with modern design and excellent everyday performance.",
-        merchants: {
-            "Amazon.sa": 1299,
-            "Noon": 1349,
-            "Jarir": 1399,
-            "eXtra": 1349
-        }
-    },
-
-    {
-        id: "macbook-air-m4",
-        name: "MacBook Air M4",
-        category: "Laptops & Computers",
-        price: 3999,
-        oldPrice: 4299,
-        icon: "💻",
-        description: "Apple MacBook Air powered by the M4 chip.",
-        merchants: {
-            "Amazon.sa": 3999,
-            "Noon": 4099,
-            "Jarir": 4199,
-            "eXtra": 4299
-        }
-    },
-
-    {
-        id: "dell-inspiron",
-        name: "Dell Inspiron Laptop",
-        category: "Laptops & Computers",
-        price: 1899,
-        oldPrice: 2199,
-        icon: "💻",
-        description: "Dell Inspiron laptop suitable for work, study and everyday computing.",
-        merchants: {
-            "Amazon.sa": 1899,
-            "Noon": 1949,
-            "Jarir": 1999,
-            "eXtra": 2049
-        }
-    },
-
-    {
-        id: "hp-laptop",
-        name: "HP Laptop",
-        category: "Laptops & Computers",
-        price: 1599,
-        oldPrice: 1799,
-        icon: "💻",
-        description: "Affordable HP laptop for everyday productivity.",
-        merchants: {
-            "Amazon.sa": 1599,
-            "Noon": 1649,
-            "Jarir": 1699,
-            "eXtra": 1749
-        }
-    },
-
-    {
-        id: "lenovo-ideapad",
-        name: "Lenovo IdeaPad",
-        category: "Laptops & Computers",
-        price: 1299,
-        oldPrice: 1499,
-        icon: "💻",
-        description: "Lenovo IdeaPad designed for everyday computing.",
-        merchants: {
-            "Amazon.sa": 1299,
-            "Noon": 1349,
-            "Jarir": 1399,
-            "eXtra": 1449
-        }
-    },
-
-    {
-        id: "ps5",
-        name: "PlayStation 5",
-        category: "Gaming",
-        price: 1899,
-        oldPrice: 2099,
-        icon: "🎮",
-        description: "Sony PlayStation 5 console.",
-        merchants: {
-            "Amazon.sa": 1899,
-            "Noon": 1949,
-            "Jarir": 1999,
-            "eXtra": 2049
-        }
-    },
-
-    {
-        id: "ps5-pro",
-        name: "PlayStation 5 Pro",
-        category: "Gaming",
-        price: 3649,
-        oldPrice: 3999,
-        icon: "🎮",
-        description: "PlayStation 5 Pro with enhanced gaming performance.",
-        merchants: {
-            "Amazon.sa": 3649,
-            "Noon": 3699,
-            "Jarir": 3799,
-            "eXtra": 3899
-        }
-    },
-
-    {
-        id: "xbox-series-x",
-        name: "Xbox Series X",
-        category: "Gaming",
-        price: 1999,
-        oldPrice: 2299,
-        icon: "🎮",
-        description: "Microsoft Xbox Series X gaming console.",
-        merchants: {
-            "Amazon.sa": 1999,
-            "Noon": 2049,
-            "Jarir": 2099,
-            "eXtra": 2149
-        }
-    },
-
-    {
-        id: "samsung-tv-55",
-        name: "Samsung 55-inch 4K TV",
-        category: "TV & Electronics",
-        price: 1699,
-        oldPrice: 1999,
-        icon: "📺",
-        description: "Samsung 55-inch 4K smart television.",
-        merchants: {
-            "Amazon.sa": 1699,
-            "Noon": 1749,
-            "Jarir": 1799,
-            "eXtra": 1699
-        }
-    },
-
-    {
-        id: "lg-tv-55",
-        name: "LG 55-inch 4K TV",
-        category: "TV & Electronics",
-        price: 1799,
-        oldPrice: 2099,
-        icon: "📺",
-        description: "LG 55-inch 4K smart television.",
-        merchants: {
-            "Amazon.sa": 1799,
-            "Noon": 1849,
-            "Jarir": 1899,
-            "eXtra": 1949
-        }
-    },
-
-    {
-        id: "airpods-pro",
-        name: "AirPods Pro",
-        category: "TV & Electronics",
-        price: 799,
-        oldPrice: 899,
-        icon: "🎧",
-        description: "Apple AirPods Pro wireless earbuds.",
-        merchants: {
-            "Amazon.sa": 799,
-            "Noon": 819,
-            "Jarir": 849,
-            "eXtra": 829
-        }
-    }
-
-];
+const SUPABASE_PUBLISHABLE_KEY =
+    "sb_publishable_rcqTalygq3UwWu5luSNPNQ_P8t1OniI";
 
 
 /* =========================================================
-   UTILITIES
+   GLOBAL DATA
    ========================================================= */
 
-function money(value) {
+let products = [];
 
-    return new Intl.NumberFormat("en-SA", {
-        style: "currency",
-        currency: "SAR",
-        maximumFractionDigits: 0
-    }).format(value);
+let currentSearch = "";
 
+let databaseLoaded = false;
+
+
+/* =========================================================
+   HELPERS
+   ========================================================= */
+
+function money(value){
+
+    const number = Number(value);
+
+    if(!Number.isFinite(number)){
+        return "Price unavailable";
+    }
+
+    return number.toLocaleString("en-SA",{
+        style:"currency",
+        currency:"SAR",
+        maximumFractionDigits:2
+    });
+}
+
+
+function escapeHtml(value){
+
+    return String(value ?? "")
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
+}
+
+
+function slugify(text){
+
+    return String(text || "")
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g,"-")
+        .replace(/^-+|-+$/g,"");
+}
+
+
+function iconFor(category,name){
+
+    const text =
+        ((category || "") + " " + (name || "")).toLowerCase();
+
+    if(text.includes("iphone") || text.includes("phone") || text.includes("mobile"))
+        return "📱";
+
+    if(text.includes("laptop") || text.includes("macbook") || text.includes("computer"))
+        return "💻";
+
+    if(text.includes("playstation") || text.includes("xbox") || text.includes("gaming"))
+        return "🎮";
+
+    if(text.includes("tv") || text.includes("television"))
+        return "📺";
+
+    if(text.includes("headphone") || text.includes("airpods") || text.includes("audio"))
+        return "🎧";
+
+    if(text.includes("watch"))
+        return "⌚";
+
+    if(text.includes("camera"))
+        return "📷";
+
+    if(text.includes("kitchen") || text.includes("home"))
+        return "🏠";
+
+    if(text.includes("beauty"))
+        return "💄";
+
+    if(text.includes("fashion") || text.includes("shoe"))
+        return "👟";
+
+    return "🛍️";
 }
 
 
 /* =========================================================
-   PAGE CONTROL
+   DATABASE PRODUCT NORMALIZATION
    ========================================================= */
 
-function hideAllPages() {
+function normalizeProduct(row,index){
 
-    document.querySelectorAll(".page").forEach(function(page) {
-        page.classList.remove("active");
-    });
+    const price =
+        Number(row.price);
 
+    const oldPrice =
+        row.old_price === null ||
+        row.old_price === undefined ||
+        row.old_price === ""
+            ? null
+            : Number(row.old_price);
+
+    let discount = 0;
+
+    if(
+        Number.isFinite(price) &&
+        Number.isFinite(oldPrice) &&
+        oldPrice > price
+    ){
+        discount =
+            Math.round(((oldPrice-price)/oldPrice)*100);
+    }
+
+    return {
+
+        id:
+            row.id ??
+            slugify(row.name) ??
+            "product-"+index,
+
+        name:
+            row.name ||
+            "Unnamed Product",
+
+        category:
+            row.category ||
+            "Other",
+
+        price:
+            Number.isFinite(price)
+                ? price
+                : null,
+
+        old_price:
+            Number.isFinite(oldPrice)
+                ? oldPrice
+                : null,
+
+        image_url:
+            row.image_url ||
+            "",
+
+        product_url:
+            row.product_url ||
+            "",
+
+        store:
+            row.store ||
+            "Online Store",
+
+        affiliate_url:
+            row.affiliate_url ||
+            row.product_url ||
+            "",
+
+        description:
+            row.description ||
+            "Find this product and compare available shopping options on SaudiDeals.",
+
+        updated_at:
+            row.updated_at ||
+            "",
+
+        discount
+
+    };
 }
 
 
-function displayPage(pageId) {
+/* =========================================================
+   SUPABASE DATABASE
+   ========================================================= */
 
-    hideAllPages();
+async function loadProducts(){
 
-    const page = document.getElementById(pageId);
+    const status =
+        document.getElementById("dbStatus");
 
-    if (page) {
-        page.classList.add("active");
+    if(
+        !SUPABASE_PUBLISHABLE_KEY ||
+        SUPABASE_PUBLISHABLE_KEY ===
+        "PASTE_YOUR_NEW_PUBLISHABLE_KEY_HERE"
+    ){
+
+        if(status){
+
+            status.className =
+                "db-status status-warning";
+
+            status.innerHTML =
+                "⚠ Add your new Supabase publishable key to connect the database.";
+
+        }
+
+        products = [];
+
+        loadHomeProducts();
+
+        return;
     }
 
-    window.scrollTo({
-        top: 0,
-        behavior: "instant"
-    });
 
+    if(status){
+
+        status.className =
+            "db-status status-warning";
+
+        status.innerHTML =
+            "Connecting to SaudiDeals database...";
+    }
+
+
+    try{
+
+        const url =
+            SUPABASE_URL +
+            "/rest/v1/products?select=*&order=updated_at.desc";
+
+
+        const response =
+            await fetch(url,{
+
+                method:"GET",
+
+                headers:{
+                    "apikey":
+                        SUPABASE_PUBLISHABLE_KEY,
+
+                    "Authorization":
+                        "Bearer " +
+                        SUPABASE_PUBLISHABLE_KEY,
+
+                    "Content-Type":
+                        "application/json"
+                }
+
+            });
+
+
+        if(!response.ok){
+
+            const errorText =
+                await response.text();
+
+            throw new Error(
+                "Supabase error " +
+                response.status +
+                ": " +
+                errorText
+            );
+        }
+
+
+        const rows =
+            await response.json();
+
+
+        products =
+            Array.isArray(rows)
+                ? rows.map(normalizeProduct)
+                : [];
+
+
+        databaseLoaded = true;
+
+
+        if(status){
+
+            status.className =
+                "db-status status-success";
+
+            if(products.length > 0){
+
+                status.innerHTML =
+                    "✓ Live products loaded automatically from SaudiDeals database.";
+
+            }else{
+
+                status.innerHTML =
+                    "✓ Database connected. No products have been imported yet.";
+
+            }
+        }
+
+
+        loadHomeProducts();
+
+
+    }catch(error){
+
+        console.error(
+            "SaudiDeals database error:",
+            error
+        );
+
+
+        products = [];
+
+
+        if(status){
+
+            status.className =
+                "db-status status-error";
+
+            status.innerHTML =
+                "✕ Database connection failed. Check your Supabase key and RLS SELECT policy.";
+        }
+
+
+        loadHomeProducts();
+    }
 }
 
 
@@ -1221,93 +1161,332 @@ function displayPage(pageId) {
    PRODUCT CARD
    ========================================================= */
 
-function productCard(product) {
+function productCard(product){
 
-    const saved = getWishlist().includes(product.id);
+    const wished =
+        getWishlist().includes(String(product.id));
+
+    const image =
+        product.image_url
+            ? `
+                <img
+                    src="${escapeHtml(product.image_url)}"
+                    alt="${escapeHtml(product.name)}"
+                    loading="lazy"
+                    onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
+                >
+                <div class="product-placeholder" style="display:none">
+                    ${iconFor(product.category,product.name)}
+                </div>
+              `
+            : `
+                <div class="product-placeholder">
+                    ${iconFor(product.category,product.name)}
+                </div>
+              `;
+
+
+    const priceHtml =
+        product.price !== null
+            ? money(product.price)
+            : "Price unavailable";
+
+
+    const oldPriceHtml =
+        product.old_price !== null &&
+        product.old_price > product.price
+            ? `<span class="old-price">${money(product.old_price)}</span>`
+            : "";
+
+
+    const discountHtml =
+        product.discount > 0
+            ? `<div class="discount">${product.discount}% OFF</div>`
+            : "";
+
 
     return `
 
-        <div class="product-card">
+        <article class="product-card">
 
-            ${
-                product.oldPrice > product.price
-                ? `<div class="deal-label">DEAL</div>`
-                : ""
-            }
+            <div class="product-image">
 
-            <div
-                class="product-image"
-                onclick="openProduct('${product.id}')"
-                style="cursor:pointer"
-            >
-                ${product.icon}
-            </div>
-
-            <div class="product-content">
-
-                <div class="product-category">
-                    ${product.category}
-                </div>
-
-                <div
-                    class="product-name"
-                    onclick="openProduct('${product.id}')"
-                    style="cursor:pointer"
+                <button
+                    class="wishlist-btn ${wished ? "active":""}"
+                    onclick="toggleWishlist('${escapeHtml(String(product.id))}')"
+                    aria-label="Add to wishlist"
                 >
-                    ${product.name}
+                    ${wished ? "♥":"♡"}
+                </button>
+
+                ${image}
+
+            </div>
+
+
+            <div class="product-info">
+
+                <div class="product-store">
+                    ${escapeHtml(product.store)}
                 </div>
 
-                <div class="price">
-                    ${money(product.price)}
+                <div class="product-name">
+                    ${escapeHtml(product.name)}
                 </div>
 
-                ${
-                    product.oldPrice
-                    ? `<div class="old-price">${money(product.oldPrice)}</div>`
-                    : ""
-                }
+                <div>
+                    <span class="product-price">
+                        ${priceHtml}
+                    </span>
 
-                <div class="card-buttons">
+                    ${oldPriceHtml}
+                </div>
+
+                ${discountHtml}
+
+
+                <div class="product-actions">
 
                     <button
-                        class="view-button"
-                        onclick="openProduct('${product.id}')"
+                        class="view-btn"
+                        onclick="openProduct('${escapeHtml(String(product.id))}')"
                     >
-                        Compare Prices
+                        Compare
                     </button>
 
                     <button
-                        class="wish-button"
-                        onclick="toggleWishlist('${product.id}')"
-                        aria-label="Wishlist"
+                        class="deal-btn"
+                        onclick="merchantClick('${escapeHtml(product.store)}','${escapeHtml(product.name)}','${escapeHtml(product.affiliate_url || product.product_url)}')"
                     >
-                        ${saved ? "❤️" : "♡"}
+                        View Deal
                     </button>
 
                 </div>
 
             </div>
 
-        </div>
+        </article>
+
     `;
 }
 
 
 /* =========================================================
-   LOAD HOME
+   HOME PAGE
    ========================================================= */
 
-function loadHomeProducts() {
+function homeTemplate(){
 
-    const box = document.getElementById("homeProducts");
+    return `
 
-    if (!box) return;
+        <section class="hero">
 
-    box.innerHTML = products
-        .slice(0, 12)
-        .map(productCard)
-        .join("");
+            <div class="container hero-content">
 
+                <h1>
+                    Find the <span>Best Deals</span>
+                    in Saudi Arabia
+                </h1>
+
+                <p>
+                    Compare products and discover better prices
+                    from online stores in one place.
+                </p>
+
+
+                <div class="hero-search">
+
+                    <input
+                        id="heroSearch"
+                        type="search"
+                        placeholder="Search iPhone, laptop, PS5..."
+                        autocomplete="off"
+                    >
+
+                    <button onclick="performHeroSearch()">
+                        Search
+                    </button>
+
+                </div>
+
+
+                <div id="dbStatus" class="db-status">
+                    Connecting...
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Shop by Category</h2>
+                </div>
+
+
+                <div class="categories">
+
+                    <button
+                        class="category-btn"
+                        onclick="performSearch('Mobiles')"
+                    >
+                        <span class="category-icon">📱</span>
+                        Mobiles & Tablets
+                    </button>
+
+                    <button
+                        class="category-btn"
+                        onclick="performSearch('Laptops')"
+                    >
+                        <span class="category-icon">💻</span>
+                        Laptops & Computers
+                    </button>
+
+                    <button
+                        class="category-btn"
+                        onclick="performSearch('Gaming')"
+                    >
+                        <span class="category-icon">🎮</span>
+                        Gaming
+                    </button>
+
+                    <button
+                        class="category-btn"
+                        onclick="performSearch('TV')"
+                    >
+                        <span class="category-icon">📺</span>
+                        TV & Electronics
+                    </button>
+
+                    <button
+                        class="category-btn"
+                        onclick="performSearch('Home')"
+                    >
+                        <span class="category-icon">🏠</span>
+                        Home & Kitchen
+                    </button>
+
+                    <button
+                        class="category-btn"
+                        onclick="performSearch('Fashion')"
+                    >
+                        <span class="category-icon">👟</span>
+                        Fashion
+                    </button>
+
+                    <button
+                        class="category-btn"
+                        onclick="performSearch('Beauty')"
+                    >
+                        <span class="category-icon">💄</span>
+                        Beauty
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Today's Best Deals</h2>
+                </div>
+
+                <div
+                    id="homeProducts"
+                    class="product-grid"
+                ></div>
+
+            </div>
+
+        </section>
+
+    `;
+}
+
+
+function loadHomeProducts(){
+
+    const app =
+        document.getElementById("app");
+
+    if(!app){
+
+        return;
+    }
+
+
+    if(
+        !app.innerHTML ||
+        !app.innerHTML.includes("Today's Best Deals")
+    ){
+
+        app.innerHTML =
+            homeTemplate();
+
+    }
+
+
+    const container =
+        document.getElementById("homeProducts");
+
+
+    if(!container){
+
+        return;
+    }
+
+
+    if(products.length === 0){
+
+        container.innerHTML = `
+
+            <div class="empty-state">
+
+                <h3>No products yet</h3>
+
+                <p>
+                    Your SaudiDeals database is connected,
+                    but products have not been imported yet.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+    }
+
+
+    const sorted =
+        [...products]
+            .sort((a,b) => {
+
+                const discountA =
+                    Number(a.discount || 0);
+
+                const discountB =
+                    Number(b.discount || 0);
+
+                return discountB - discountA;
+
+            })
+            .slice(0,12);
+
+
+    container.innerHTML =
+        sorted
+            .map(productCard)
+            .join("");
 }
 
 
@@ -1315,349 +1494,446 @@ function loadHomeProducts() {
    SEARCH
    ========================================================= */
 
-function performHeroSearch() {
+function performHeroSearch(){
 
-    const input = document.getElementById("heroSearch");
+    const hero =
+        document.getElementById("heroSearch");
 
-    const query = input.value.trim();
+    const top =
+        document.getElementById("topSearch");
+
+
+    const query =
+        hero?.value?.trim() ||
+        top?.value?.trim() ||
+        "";
+
 
     performSearch(query);
-
 }
 
 
-function performSearch(queryOverride) {
+function performSearch(queryOverride){
 
-    let query = "";
-
-    if (typeof queryOverride === "string") {
-
-        query = queryOverride.trim();
-
-    } else {
-
-        query = document.getElementById("topSearch").value.trim();
-
-    }
-
-    /* If no search term, return home */
-
-    if (!query) {
-
-        goHome();
-
-        return;
-    }
-
-    const lowerQuery = query.toLowerCase();
-
-    const results = products.filter(function(product) {
-
-        return (
-            product.name.toLowerCase().includes(lowerQuery) ||
-            product.category.toLowerCase().includes(lowerQuery) ||
-            product.description.toLowerCase().includes(lowerQuery)
-        );
-
-    });
+    const query =
+        String(
+            queryOverride ??
+            document.getElementById("topSearch")?.value ??
+            ""
+        ).trim();
 
 
-    document.getElementById("topSearch").value = query;
-
-    document.getElementById("heroSearch").value =
+    currentSearch =
         query;
 
 
-    renderSearchResults(query, results);
-
-
-    /*
-       IMPORTANT:
-       Save the search in browser history.
-       This is what allows iPhone Safari Back
-       to return to the search results.
-    */
-
     history.pushState(
-        {
-            page: "search",
-            query: query
-        },
+        {page:"search",query},
         "",
-        "#search=" + encodeURIComponent(query)
+        "#search=" +
+        encodeURIComponent(query)
     );
 
+
+    renderSearchResults(
+        query
+    );
 }
 
 
-function renderSearchResults(query, results) {
+function renderSearchResults(
+    query,
+    suppliedResults=null
+){
 
-    displayPage("searchPage");
-
-    document.getElementById("searchTitle").textContent =
-        "Search results for: " + query;
-
-    document.getElementById("searchDescription").textContent =
-        results.length + " product(s) found";
+    let results;
 
 
-    const box = document.getElementById("searchProducts");
+    if(suppliedResults){
+
+        results =
+            suppliedResults;
+
+    }else{
+
+        const q =
+            query.toLowerCase();
 
 
-    if (results.length === 0) {
+        if(!q){
 
-        box.innerHTML = `
-            <div class="no-results">
-                <h2>No products found</h2>
-                <br>
-                <p>Try another search such as iPhone, Samsung, laptop or PlayStation.</p>
-            </div>
-        `;
+            results =
+                [...products];
 
-        return;
-    }
+        }else{
 
+            results =
+                products.filter(product => {
 
-    box.innerHTML =
-        results.map(productCard).join("");
+                    const searchable = [
 
-}
+                        product.name,
 
+                        product.category,
 
-/* =========================================================
-   PRODUCT PAGE
-   ========================================================= */
+                        product.store,
 
-function openProduct(id, fromHistory = false) {
+                        product.description
 
-    const product = products.find(function(item) {
-        return item.id === id;
-    });
+                    ]
+                    .join(" ")
+                    .toLowerCase();
 
 
-    if (!product) {
+                    return searchable.includes(q);
 
-        goHome();
+                });
 
-        return;
-    }
-
-
-    /*
-       Only create a new browser history entry
-       when the user actually clicks a product.
-    */
-
-    if (!fromHistory) {
-
-        history.pushState(
-            {
-                page: "product",
-                id: id
-            },
-            "",
-            "#product=" + encodeURIComponent(id)
-        );
+        }
 
     }
 
 
-    displayPage("productPage");
+    const app =
+        document.getElementById("app");
 
 
-    const merchantRows =
-        Object.entries(product.merchants)
-        .map(function(entry) {
+    app.innerHTML = `
 
-            const store = entry[0];
-            const price = entry[1];
+        <section class="search-page">
 
-            return `
-
-                <tr>
-
-                    <td>
-                        <strong>${store}</strong>
-                    </td>
-
-                    <td class="merchant-price">
-                        ${money(price)}
-                    </td>
-
-                    <td>
-                        <button
-                            class="merchant-button"
-                            onclick="merchantClick('${store}', '${product.name}')"
-                        >
-                            Visit Store
-                        </button>
-                    </td>
-
-                </tr>
-
-            `;
-
-        })
-        .join("");
-
-
-    document.getElementById("productContent").innerHTML = `
-
-        <div class="detail-grid">
-
-            <div class="detail-image">
-                ${product.icon}
-            </div>
-
-            <div class="detail-info">
-
-                <div class="product-category">
-                    ${product.category}
-                </div>
-
-                <h1>
-                    ${product.name}
-                </h1>
-
-                <div class="detail-price">
-                    ${money(product.price)}
-                </div>
-
-                ${
-                    product.oldPrice
-                    ? `<div class="old-price">
-                        Was ${money(product.oldPrice)}
-                       </div>`
-                    : ""
-                }
-
-                <p class="detail-description">
-                    ${product.description}
-                </p>
+            <div class="container">
 
                 <button
-                    class="view-button"
-                    style="width:100%;"
-                    onclick="toggleWishlist('${product.id}')"
+                    class="back-btn"
+                    onclick="goHome()"
                 >
-                    ❤️ Add / Remove Wishlist
+                    ← Back to Home
                 </button>
 
-            </div>
 
-        </div>
+                <div class="search-heading">
+
+                    <h2>
+                        ${
+                            query
+                                ? "Search results"
+                                : "All Deals"
+                        }
+                    </h2>
+
+                    <p>
+                        ${
+                            query
+                                ? `${results.length} result(s) for "${escapeHtml(query)}"`
+                                : `${results.length} products available`
+                        }
+                    </p>
+
+                </div>
 
 
-        <div class="compare-table">
+                <div class="product-grid">
 
-            <h2>
-                Compare Saudi Prices
-            </h2>
+                    ${
+                        results.length
+                            ? results.map(productCard).join("")
+                            : `
+                                <div class="empty-state">
 
-            <div class="table-wrapper">
+                                    <h3>
+                                        No products found
+                                    </h3>
 
-                <table>
+                                    <p>
+                                        Try another product name or category.
+                                    </p>
 
-                    <thead>
+                                </div>
+                              `
+                    }
 
-                        <tr>
-                            <th>Store</th>
-                            <th>Price</th>
-                            <th></th>
-                        </tr>
-
-                    </thead>
-
-                    <tbody>
-
-                        ${merchantRows}
-
-                    </tbody>
-
-                </table>
-
-            </div>
-
-        </div>
-
-        <div style="margin-top:35px;">
-
-            <h2 style="margin-bottom:15px;">
-                Similar Products
-            </h2>
-
-            <div class="products">
-
-                ${
-                    products
-                    .filter(function(item) {
-
-                        return (
-                            item.category === product.category &&
-                            item.id !== product.id
-                        );
-
-                    })
-                    .slice(0,4)
-                    .map(productCard)
-                    .join("")
-                }
+                </div>
 
             </div>
 
-        </div>
+        </section>
 
     `;
-
 }
 
 
 /* =========================================================
-   BROWSER BACK
+   PRODUCT DETAIL
    ========================================================= */
 
-function browserBack() {
+function openProduct(
+    id,
+    fromHistory=false
+){
 
-    /*
-       Use the real browser history.
+    const product =
+        products.find(
+            p => String(p.id) === String(id)
+        );
 
-       This is especially important on iPhone
-       Safari and swipe-back gestures.
-    */
 
-    if (window.history.length > 1) {
+    if(!product){
 
-        history.back();
+        alert(
+            "This product is not available in the database."
+        );
 
-    } else {
-
-        goHome();
-
+        return;
     }
 
-}
 
-
-/* =========================================================
-   HOME
-   ========================================================= */
-
-function goHome(fromHistory = false) {
-
-    if (!fromHistory) {
+    if(!fromHistory){
 
         history.pushState(
             {
-                page: "home"
+                page:"product",
+                id:String(id)
             },
             "",
-            window.location.pathname
+            "#product=" +
+            encodeURIComponent(String(id))
         );
 
     }
 
-    displayPage("homePage");
 
+    const app =
+        document.getElementById("app");
+
+
+    const wished =
+        getWishlist()
+            .includes(String(product.id));
+
+
+    const image =
+        product.image_url
+            ? `
+                <img
+                    src="${escapeHtml(product.image_url)}"
+                    alt="${escapeHtml(product.name)}"
+                >
+              `
+            : `
+                <div class="detail-placeholder">
+                    ${iconFor(product.category,product.name)}
+                </div>
+              `;
+
+
+    const mainPrice =
+        product.price !== null
+            ? money(product.price)
+            : "Price unavailable";
+
+
+    app.innerHTML = `
+
+        <section class="detail-page">
+
+            <div class="container">
+
+                <button
+                    class="back-btn"
+                    onclick="browserBack()"
+                >
+                    ← Back
+                </button>
+
+
+                <div class="detail-card">
+
+                    <div class="detail-top">
+
+
+                        <div class="detail-image">
+
+                            ${image}
+
+                        </div>
+
+
+                        <div class="detail-info">
+
+                            <div class="detail-category">
+                                ${escapeHtml(product.category)}
+                            </div>
+
+
+                            <h1>
+                                ${escapeHtml(product.name)}
+                            </h1>
+
+
+                            <div class="product-store">
+                                Available from ${escapeHtml(product.store)}
+                            </div>
+
+
+                            <div class="detail-price">
+                                ${mainPrice}
+                            </div>
+
+
+                            ${
+                                product.old_price !== null &&
+                                product.old_price > product.price
+                                    ? `
+                                        <div>
+                                            <span class="old-price">
+                                                ${money(product.old_price)}
+                                            </span>
+
+                                            <span class="discount">
+                                                ${product.discount}% OFF
+                                            </span>
+                                        </div>
+                                      `
+                                    : ""
+                            }
+
+
+                            <p class="detail-description">
+                                ${escapeHtml(product.description)}
+                            </p>
+
+
+                            <div class="product-actions">
+
+                                <button
+                                    class="deal-btn"
+                                    onclick="merchantClick('${escapeHtml(product.store)}','${escapeHtml(product.name)}','${escapeHtml(product.affiliate_url || product.product_url)}')"
+                                >
+                                    View Deal
+                                </button>
+
+
+                                <button
+                                    class="view-btn"
+                                    onclick="toggleWishlist('${escapeHtml(String(product.id))}')"
+                                >
+                                    ${wished ? "♥ Remove Wishlist":"♡ Add Wishlist"}
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="comparison">
+
+                        <h2>
+                            Price Comparison
+                        </h2>
+
+
+                        <table class="comparison-table">
+
+                            <thead>
+
+                                <tr>
+                                    <th>Store</th>
+                                    <th>Price</th>
+                                    <th></th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td>
+                                        ${escapeHtml(product.store)}
+                                    </td>
+
+                                    <td>
+                                        ${mainPrice}
+                                    </td>
+
+                                    <td>
+
+                                        ${
+                                            product.affiliate_url ||
+                                            product.product_url
+                                                ? `
+                                                    <button
+                                                        class="buy-btn"
+                                                        onclick="merchantClick('${escapeHtml(product.store)}','${escapeHtml(product.name)}','${escapeHtml(product.affiliate_url || product.product_url)}')"
+                                                    >
+                                                        Visit Store
+                                                    </button>
+                                                  `
+                                                : "Link unavailable"
+                                        }
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    `;
+}
+
+
+/* =========================================================
+   MERCHANT / AFFILIATE CLICK
+   ========================================================= */
+
+function merchantClick(
+    store,
+    productName,
+    url
+){
+
+    if(!url){
+
+        alert(
+            "The merchant link for this product has not been added yet."
+        );
+
+        return;
+    }
+
+
+    if(
+        !url.startsWith("http://") &&
+        !url.startsWith("https://")
+    ){
+
+        alert(
+            "Invalid merchant URL."
+        );
+
+        return;
+    }
+
+
+    window.open(
+        url,
+        "_blank",
+        "noopener,noreferrer"
+    );
 }
 
 
@@ -1665,95 +1941,93 @@ function goHome(fromHistory = false) {
    WISHLIST
    ========================================================= */
 
-function getWishlist() {
+function getWishlist(){
 
-    try {
+    try{
 
-        return JSON.parse(
-            localStorage.getItem("saudideals_wishlist") || "[]"
-        );
+        const data =
+            localStorage.getItem(
+                "saudideals_wishlist"
+            );
 
-    } catch (error) {
+
+        const parsed =
+            JSON.parse(data || "[]");
+
+
+        return Array.isArray(parsed)
+            ? parsed.map(String)
+            : [];
+
+    }catch{
 
         return [];
 
     }
-
 }
 
 
-function saveWishlist(list) {
+function saveWishlist(list){
 
     localStorage.setItem(
         "saudideals_wishlist",
         JSON.stringify(list)
     );
-
 }
 
 
-function toggleWishlist(id) {
+function toggleWishlist(id){
 
-    let list = getWishlist();
+    const key =
+        String(id);
 
-    if (list.includes(id)) {
 
-        list = list.filter(function(item) {
-            return item !== id;
-        });
+    let list =
+        getWishlist();
 
-    } else {
 
-        list.push(id);
+    if(list.includes(key)){
+
+        list =
+            list.filter(
+                item => item !== key
+            );
+
+    }else{
+
+        list.push(key);
 
     }
 
+
     saveWishlist(list);
 
-    /*
-       Refresh the currently visible page.
-    */
 
-    const currentHash = window.location.hash;
+    const currentProduct =
+        products.find(
+            p => String(p.id) === key
+        );
 
-    if (currentHash.startsWith("#product=")) {
 
-        const productId =
-            decodeURIComponent(
-                currentHash.replace("#product=", "")
-            );
+    if(
+        location.hash.startsWith("#product=") &&
+        currentProduct
+    ){
 
-        openProduct(productId, true);
+        openProduct(
+            key,
+            true
+        );
 
-    } else if (
-        document.getElementById("wishlistPage").classList.contains("active")
-    ) {
+    }else{
 
-        renderWishlist();
+        if(location.hash.startsWith("#wishlist")){
 
-    } else {
+            renderWishlist();
 
-        loadHomeProducts();
+        }else{
 
-        if (
-            document.getElementById("searchPage").classList.contains("active")
-        ) {
-
-            const query =
-                document.getElementById("searchTitle")
-                .textContent
-                .replace("Search results for: ", "");
-
-            const results = products.filter(function(product) {
-
-                return (
-                    product.name.toLowerCase().includes(query.toLowerCase()) ||
-                    product.category.toLowerCase().includes(query.toLowerCase())
-                );
-
-            });
-
-            renderSearchResults(query, results);
+            loadHomeProducts();
 
         }
 
@@ -1762,74 +2036,96 @@ function toggleWishlist(id) {
 }
 
 
-function showWishlist() {
+function showWishlist(
+    fromHistory=false
+){
 
-    history.pushState(
-        {
-            page: "wishlist"
-        },
-        "",
-        "#wishlist"
-    );
+    if(!fromHistory){
 
-    renderWishlist();
+        history.pushState(
+            {page:"wishlist"},
+            "",
+            "#wishlist"
+        );
 
-}
-
-
-function renderWishlist() {
-
-    displayPage("wishlistPage");
-
-    const list = getWishlist();
-
-    const box =
-        document.getElementById("wishlistProducts");
-
-
-    const savedProducts =
-        products.filter(function(product) {
-            return list.includes(product.id);
-        });
-
-
-    if (savedProducts.length === 0) {
-
-        box.innerHTML = `
-            <div class="no-results">
-                <h2>Your wishlist is empty ❤️</h2>
-                <br>
-                <p>
-                    Open a product and add it to your wishlist.
-                </p>
-            </div>
-        `;
-
-        return;
     }
 
 
-    box.innerHTML =
-        savedProducts.map(productCard).join("");
-
+    renderWishlist();
 }
 
 
-/* =========================================================
-   MERCHANT BUTTON
-   ========================================================= */
+function renderWishlist(){
 
-function merchantClick(store, productName) {
+    const ids =
+        getWishlist();
 
-    alert(
-        store +
-        " affiliate link is not connected yet.\n\n" +
-        "Product: " +
-        productName +
-        "\n\n" +
-        "Later we will replace this button with your real affiliate link."
-    );
 
+    const saved =
+        products.filter(
+            product =>
+                ids.includes(String(product.id))
+        );
+
+
+    const app =
+        document.getElementById("app");
+
+
+    app.innerHTML = `
+
+        <section class="search-page">
+
+            <div class="container">
+
+                <button
+                    class="back-btn"
+                    onclick="browserBack()"
+                >
+                    ← Back
+                </button>
+
+
+                <div class="search-heading">
+
+                    <h2>
+                        My Wishlist
+                    </h2>
+
+                    <p>
+                        ${saved.length} saved product(s)
+                    </p>
+
+                </div>
+
+
+                <div class="product-grid">
+
+                    ${
+                        saved.length
+                            ? saved.map(productCard).join("")
+                            : `
+                                <div class="empty-state">
+
+                                    <h3>
+                                        Your wishlist is empty
+                                    </h3>
+
+                                    <p>
+                                        Tap ♡ on a product to save it here.
+                                    </p>
+
+                                </div>
+                              `
+                    }
+
+                </div>
+
+            </div>
+
+        </section>
+
+    `;
 }
 
 
@@ -1837,318 +2133,331 @@ function merchantClick(store, productName) {
    INFORMATION PAGES
    ========================================================= */
 
-function showInfo(type, fromHistory = false) {
+function showInfo(
+    type,
+    fromHistory=false
+){
 
-    if (!fromHistory) {
+    if(!fromHistory){
 
         history.pushState(
             {
-                page: "info",
-                type: type
+                page:"info",
+                type
             },
             "",
-            "#info=" + type
+            "#info=" +
+            encodeURIComponent(type)
         );
 
     }
 
 
-    displayPage("infoPage");
+    const pages = {
+
+        about:{
+
+            title:"About SaudiDeals",
+
+            body:`
+
+                <p>
+                    SaudiDeals is a Saudi Arabia focused shopping
+                    comparison platform designed to help shoppers
+                    discover products and compare available prices.
+                </p>
+
+                <p>
+                    Our goal is simple: make online shopping research
+                    easier by bringing useful product information and
+                    shopping links together in one place.
+                </p>
+
+                <h2>How SaudiDeals Works</h2>
+
+                <p>
+                    We organize product information from participating
+                    shopping sources and present it in an easy-to-use
+                    comparison interface.
+                </p>
+
+                <p>
+                    When you click a merchant or affiliate button,
+                    you may be redirected to the merchant's website.
+                </p>
+
+            `
+        },
 
 
-    let title = "";
-    let content = "";
+        affiliate:{
+
+            title:"Affiliate Disclosure",
+
+            body:`
+
+                <p>
+                    SaudiDeals may participate in affiliate programs.
+                </p>
+
+                <p>
+                    This means that when you click certain shopping
+                    links and make a qualifying purchase, SaudiDeals
+                    may receive a commission from the merchant.
+                </p>
+
+                <p>
+                    This does not necessarily increase the price you
+                    pay for the product.
+                </p>
+
+                <p>
+                    Product prices and availability can change on
+                    merchant websites. Always verify the final price,
+                    shipping charges and availability before purchasing.
+                </p>
+
+            `
+        },
 
 
-    if (type === "about") {
+        privacy:{
 
-        title = "About SaudiDeals";
+            title:"Privacy Policy",
 
-        content = `
-            <p>
-                SaudiDeals is a Saudi-focused shopping comparison
-                platform designed to help shoppers discover products,
-                compare prices and find better deals.
-            </p>
+            body:`
 
-            <p>
-                Our goal is to make online shopping in Saudi Arabia
-                easier by bringing product information and prices
-                together in one place.
-            </p>
-        `;
+                <p>
+                    SaudiDeals respects your privacy.
+                </p>
 
-    }
+                <h2>Information We Collect</h2>
 
+                <p>
+                    The current version of the website does not require
+                    an account for normal product browsing.
+                </p>
 
-    if (type === "affiliate") {
+                <h2>Local Storage</h2>
 
-        title = "Affiliate Disclosure";
+                <p>
+                    Wishlist information may be stored locally in your
+                    browser so that your saved products remain available
+                    on your device.
+                </p>
 
-        content = `
-            <p>
-                SaudiDeals may participate in affiliate programs.
-                When you click an affiliate link and purchase a product,
-                SaudiDeals may receive a commission.
-            </p>
+                <h2>Third-Party Websites</h2>
 
-            <p>
-                This does not normally increase the price you pay.
-            </p>
-        `;
+                <p>
+                    Clicking a merchant link takes you to another
+                    website. That website's own privacy policy and
+                    terms will apply.
+                </p>
 
-    }
+            `
+        },
 
 
-    if (type === "privacy") {
+        terms:{
 
-        title = "Privacy Policy";
+            title:"Terms & Conditions",
 
-        content = `
-            <p>
-                SaudiDeals respects your privacy.
-            </p>
+            body:`
 
-            <p>
-                This initial version stores wishlist information
-                locally in your browser.
-            </p>
+                <p>
+                    SaudiDeals provides shopping comparison and
+                    informational content.
+                </p>
 
-            <p>
-                As the website grows, this page will be updated
-                with the complete privacy policy and information
-                regarding analytics, cookies and third-party services.
-            </p>
-        `;
+                <p>
+                    Prices, product specifications, stock status,
+                    promotions and availability may change.
+                </p>
 
-    }
+                <p>
+                    SaudiDeals does not guarantee the accuracy or
+                    continued availability of every listed offer.
+                </p>
 
+                <p>
+                    Users should verify the final product information
+                    directly with the merchant before purchasing.
+                </p>
 
-    if (type === "terms") {
-
-        title = "Terms & Conditions";
-
-        content = `
-            <p>
-                Product prices shown on the current demo website
-                are sample prices and are not guaranteed to be
-                current merchant prices.
-            </p>
-
-            <p>
-                Users should verify the final price, availability,
-                shipping and other conditions on the merchant website
-                before purchasing.
-            </p>
-        `;
-
-    }
+            `
+        },
 
 
-    if (type === "contact") {
+        contact:{
 
-        title = "Contact SaudiDeals";
+            title:"Contact SaudiDeals",
 
-        content = `
-            <p>
-                SaudiDeals contact details will be added before
-                the public launch.
-            </p>
+            body:`
 
-            <p>
-                For now, this is the development version of the website.
-            </p>
-        `;
+                <p>
+                    For business, affiliate, partnership or website
+                    questions, please contact the SaudiDeals team.
+                </p>
 
-    }
+                <p>
+                    Contact email:
+                    <strong>contact@saudideals.sa</strong>
+                </p>
+
+                <p>
+                    Note: this email address should only be published
+                    after the domain and mailbox have actually been
+                    created.
+                </p>
+
+            `
+        }
+
+    };
 
 
-    document.getElementById("infoContent").innerHTML = `
+    const page =
+        pages[type] ||
+        pages.about;
 
-        <div class="info-box">
 
-            <h2>${title}</h2>
+    document.getElementById("app").innerHTML = `
 
-            ${content}
+        <section class="info-page">
 
-        </div>
+            <div class="container">
+
+                <button
+                    class="back-btn"
+                    onclick="browserBack()"
+                >
+                    ← Back
+                </button>
+
+
+                <div class="info-card">
+
+                    <h1>
+                        ${page.title}
+                    </h1>
+
+                    ${page.body}
+
+                </div>
+
+            </div>
+
+        </section>
 
     `;
-
 }
 
 
 /* =========================================================
-   BROWSER HISTORY / IPHONE BACK FIX
+   NAVIGATION / BROWSER HISTORY
    ========================================================= */
 
-window.addEventListener("popstate", function(event) {
+function browserBack(){
 
-    const state = event.state;
+    if(history.length > 1){
+
+        history.back();
+
+    }else{
+
+        goHome();
+
+    }
+}
 
 
-    /*
-       PRODUCT
-    */
+function goHome(
+    fromHistory=false
+){
 
-    if (state && state.page === "product") {
+    if(!fromHistory){
 
-        openProduct(
-            state.id,
-            true
+        history.pushState(
+            {page:"home"},
+            "",
+            "#home"
         );
 
-        return;
     }
 
 
-    /*
-       SEARCH
-    */
-
-    if (state && state.page === "search") {
-
-        const query = state.query || "";
-
-        document.getElementById("topSearch").value = query;
-
-        document.getElementById("heroSearch").value = query;
+    document.getElementById("app").innerHTML =
+        homeTemplate();
 
 
-        const lowerQuery = query.toLowerCase();
-
-
-        const results = products.filter(function(product) {
-
-            return (
-                product.name.toLowerCase().includes(lowerQuery) ||
-                product.category.toLowerCase().includes(lowerQuery) ||
-                product.description.toLowerCase().includes(lowerQuery)
-            );
-
-        });
-
-
-        renderSearchResults(
-            query,
-            results
-        );
-
-        return;
-    }
-
-
-    /*
-       WISHLIST
-    */
-
-    if (state && state.page === "wishlist") {
-
-        renderWishlist();
-
-        return;
-    }
-
-
-    /*
-       INFO PAGE
-    */
-
-    if (state && state.page === "info") {
-
-        showInfo(
-            state.type,
-            true
-        );
-
-        return;
-    }
-
-
-    /*
-       HOME
-    */
-
-    goHome(true);
-
-});
+    loadHomeProducts();
+}
 
 
 /* =========================================================
-   HANDLE DIRECT URL / REFRESH
+   POPSTATE
    ========================================================= */
 
-function loadInitialPage() {
+window.addEventListener(
+    "popstate",
+    function(){
 
-    const hash = window.location.hash;
+        loadInitialPage();
+
+    }
+);
 
 
-    /*
-       Product URL
-    */
+/* =========================================================
+   INITIAL PAGE / HASH
+   ========================================================= */
 
-    if (hash.startsWith("#product=")) {
+function loadInitialPage(){
+
+    const hash =
+        location.hash;
+
+
+    if(hash.startsWith("#product=")){
 
         const id =
             decodeURIComponent(
-                hash.replace("#product=", "")
+                hash.replace("#product=","")
             );
+
 
         openProduct(
             id,
             true
         );
 
+
         return;
     }
 
 
-    /*
-       Search URL
-    */
-
-    if (hash.startsWith("#search=")) {
+    if(hash.startsWith("#search=")){
 
         const query =
             decodeURIComponent(
-                hash.replace("#search=", "")
+                hash.replace("#search=","")
             );
 
 
-        const lowerQuery =
-            query.toLowerCase();
+        currentSearch =
+            query;
 
-
-        const results =
-            products.filter(function(product) {
-
-                return (
-                    product.name.toLowerCase().includes(lowerQuery) ||
-                    product.category.toLowerCase().includes(lowerQuery) ||
-                    product.description.toLowerCase().includes(lowerQuery)
-                );
-
-            });
-
-
-        document.getElementById("topSearch").value = query;
-
-        document.getElementById("heroSearch").value = query;
 
         renderSearchResults(
-            query,
-            results
+            query
         );
+
 
         return;
     }
 
 
-    /*
-       Wishlist
-    */
-
-    if (hash === "#wishlist") {
+    if(hash === "#wishlist"){
 
         renderWishlist();
 
@@ -2156,68 +2465,69 @@ function loadInitialPage() {
     }
 
 
-    /*
-       Information
-    */
-
-    if (hash.startsWith("#info=")) {
+    if(hash.startsWith("#info=")){
 
         const type =
-            hash.replace("#info=", "");
+            decodeURIComponent(
+                hash.replace("#info=","")
+            );
+
 
         showInfo(
             type,
             true
         );
 
+
         return;
     }
 
 
-    /*
-       Default
-    */
-
-    displayPage("homePage");
-
+    goHome(true);
 }
 
 
 /* =========================================================
-   ENTER KEY SEARCH
+   SEARCH KEYBOARD SUPPORT
    ========================================================= */
 
-document.getElementById("topSearch")
-    .addEventListener("keydown", function(event) {
+document.addEventListener(
+    "keydown",
+    function(event){
 
-        if (event.key === "Enter") {
+        if(
+            event.key !== "Enter"
+        ){
 
-            performSearch();
-
+            return;
         }
 
-    });
+
+        const active =
+            document.activeElement;
 
 
-document.getElementById("heroSearch")
-    .addEventListener("keydown", function(event) {
-
-        if (event.key === "Enter") {
+        if(
+            active &&
+            (
+                active.id === "topSearch" ||
+                active.id === "heroSearch"
+            )
+        ){
 
             performHeroSearch();
 
         }
 
-    });
+    }
+);
 
 
 /* =========================================================
-   START WEBSITE
+   START
    ========================================================= */
 
-loadHomeProducts();
-
-loadInitialPage();
+loadProducts();
 
 </script>
 
