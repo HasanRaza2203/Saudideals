@@ -1,0 +1,19 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SaudiDeals AI Office</title>
+<style>
+body{font-family:system-ui;margin:0;background:#07111f;color:#e8f0ff}header{padding:22px;background:#0c1b2d;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0}.wrap{max-width:1200px;margin:auto;padding:22px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}.card{background:#10243b;border:1px solid #254563;border-radius:16px;padding:18px}.big{font-size:30px;font-weight:800}.muted{color:#9fb2c8}.pill{padding:6px 10px;border-radius:20px;background:#16395b;font-size:12px}.row{display:flex;justify-content:space-between;gap:15px;border-bottom:1px solid #254563;padding:12px 0}.row:last-child{border:0}h2{margin-top:30px}button{background:white;color:#07111f;border:0;border-radius:10px;padding:9px 12px;font-weight:700}.ok{color:#76e39c}.warn{color:#ffd166}.error{color:#ff7b7b}
+</style></head><body>
+<header><div><b>SaudiDeals AI Office</b><div class="muted">Autonomous Company Command Center</div></div><div><button onclick="runChecks()">Run Checks</button> <span class="pill" id="status">Loading</span></div></header>
+<main class="wrap"><div class="grid" id="metrics"></div><h2>System Health</h2><div class="grid" id="health"></div><h2>Live Work</h2><div class="card" id="work"></div><h2>Owner Approval Queue</h2><div class="card" id="approvals"></div><h2>Departments & Agents</h2><div class="grid" id="departments"></div><h2>Activity Log</h2><div class="card" id="activity"></div></main>
+<script>
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+async function get(url){return fetch(url+'?t='+Date.now()).then(r=>r.json())}
+async function load(){const [s,a,log]=await Promise.all([get('/api/state'),get('/api/agents'),get('/api/activity')]);status.textContent=s.companyStatus||'RUNNING';
+metrics.innerHTML=[['AI Agents',s.agents],['Departments',s.departments],['Active Agents',s.active],['Waiting Approval',s.waitingApproval||0],['Completed Today',s.completedToday||0]].map(x=>`<div class="card"><div class="muted">${x[0]}</div><div class="big">${x[1]??0}</div></div>`).join('');const web=s.system?.website;health.innerHTML=`<div class="card"><div class="muted">Website</div><div class="big ${web?.healthy?'ok':'warn'}">${web?.healthy?'ONLINE':'CHECKING'}</div><div class="muted">${esc(web?.lastChecked||'')}</div></div><div class="card"><div class="muted">Git</div><div>${esc(s.system?.git||'Checking...')}</div></div>`;
+work.innerHTML=(s.work||[]).map(x=>`<div class="row"><div><b>${esc(x.task)}</b><div class="muted">${esc(x.department)} · ${esc(x.owner)}</div></div><span class="pill">${esc(x.status)}</span></div>`).join('');
+approvals.innerHTML=(s.approvals||[]).length?(s.approvals||[]).map(x=>`<div class="row"><div><b>${esc(x.title)}</b><div class="muted">${esc(x.reason||'')}</div></div><span class="pill">OWNER REVIEW</span></div>`).join(''):'<span class="muted">Nothing needs your approval right now.</span>';
+departments.innerHTML=a.map(x=>`<div class="card"><b>${esc(x.department)}</b><div>${esc(x.role)}</div><div class="muted">${esc(x.job)}</div><div class="pill" style="display:inline-block;margin-top:10px">${x.auto?'AUTOMATIC':'MANUAL'}</div></div>`).join('');
+activity.innerHTML=log.slice(0,40).map(x=>`<div class="row"><div><b>${esc(x.agent)}</b> ${esc(x.message)}<div class="muted">${esc(x.time)}</div></div><span class="${esc(x.status)}">●</span></div>`).join('')||'<span class="muted">No activity yet.</span>';
+}
+async function runChecks(){await fetch('/api/run-checks',{method:'POST'});await load()}
+load();setInterval(load,10000);
+</script></body></html>

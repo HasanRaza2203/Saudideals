@@ -1,0 +1,34 @@
+{
+  "company": "SaudiDeals",
+  "mode": "autonomous_with_owner_approval",
+  "owner_role": "Founder / Final Approver",
+  "mission": "Build SaudiDeals into a trusted Saudi price-comparison and affiliate shopping business.",
+  "departments": [
+    "Executive & Operations",
+    "Product & Merchandising",
+    "Engineering & IT",
+    "Data & Automation",
+    "Marketing & Growth",
+    "SEO & Content",
+    "Social Media & Creative",
+    "Sales & Business Development",
+    "Affiliate & Merchant Partnerships",
+    "Customer Support & Success",
+    "Finance & Accounting",
+    "Analytics & Business Intelligence",
+    "Quality Assurance",
+    "Security & Reliability",
+    "Legal, Privacy & Compliance",
+    "Human Resources & Agent Performance"
+  ],
+  "approval_required": [
+    "spending money or committing company funds",
+    "signing or accepting contracts and binding terms",
+    "banking, payouts, withdrawals or financial-account changes",
+    "creating paid campaigns or changing advertising budgets",
+    "publishing high-risk legal, financial or reputational statements",
+    "deleting production data or irreversible production changes",
+    "sharing private credentials, secrets or personal data",
+    "merchant/provider actions requiring owner identity, OTP or CAPTCHA"
+  ]
+}

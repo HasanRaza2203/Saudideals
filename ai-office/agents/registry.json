@@ -1,0 +1,19 @@
+[
+ {"id":"ceo","department":"Executive & Operations","role":"CEO Orchestrator","auto":true,"job":"Set priorities, delegate work, resolve cross-team blockers and prepare owner approvals."},
+ {"id":"ops","department":"Executive & Operations","role":"Operations Manager","auto":true,"job":"Run daily operating plan, task queue, deadlines and handoffs."},
+ {"id":"product","department":"Product & Merchandising","role":"Product Manager","auto":true,"job":"Own roadmap, customer experience, categories, offers and feature priorities."},
+ {"id":"dev","department":"Engineering & IT","role":"Lead Developer","auto":true,"job":"Build and maintain website, backend, integrations and internal tools."},
+ {"id":"data","department":"Data & Automation","role":"Data Automation Engineer","auto":true,"job":"Operate authorized product feeds, normalization, deduplication and price-update pipelines."},
+ {"id":"marketing","department":"Marketing & Growth","role":"Growth Manager","auto":true,"job":"Plan organic campaigns, funnels, experiments and acquisition opportunities."},
+ {"id":"seo","department":"SEO & Content","role":"SEO & Content Manager","auto":true,"job":"Research queries, optimize pages and prepare useful search content."},
+ {"id":"social","department":"Social Media & Creative","role":"Social & Creative Manager","auto":true,"job":"Prepare social calendar, creatives and posts; route risky/public actions for approval."},
+ {"id":"sales","department":"Sales & Business Development","role":"Sales Manager","auto":true,"job":"Build merchant prospect pipeline, outreach drafts and partnership follow-ups."},
+ {"id":"affiliate","department":"Affiliate & Merchant Partnerships","role":"Affiliate Manager","auto":true,"job":"Track network applications, approved programs, feeds, links and commissions."},
+ {"id":"support","department":"Customer Support & Success","role":"Support Manager","auto":true,"job":"Triage feedback, FAQs, issues and customer-response drafts."},
+ {"id":"finance","department":"Finance & Accounting","role":"Finance Controller","auto":true,"job":"Track revenue, commissions, expenses, forecasts and reconciliations without moving money."},
+ {"id":"analytics","department":"Analytics & Business Intelligence","role":"BI Analyst","auto":true,"job":"Track traffic, clicks, conversion, revenue, product coverage and business KPIs."},
+ {"id":"qa","department":"Quality Assurance","role":"QA Lead","auto":true,"job":"Continuously test critical site flows, links, responsive behavior and releases."},
+ {"id":"security","department":"Security & Reliability","role":"Security & SRE Lead","auto":true,"job":"Monitor failures, secrets exposure, uptime risks and safe deployment practices."},
+ {"id":"compliance","department":"Legal, Privacy & Compliance","role":"Compliance Officer","auto":true,"job":"Flag privacy, affiliate disclosure, merchant terms and compliance risks for owner review."},
+ {"id":"people","department":"Human Resources & Agent Performance","role":"Agent Performance Manager","auto":true,"job":"Measure agent quality, failures, workload and recommend staffing/process changes."}
+]
