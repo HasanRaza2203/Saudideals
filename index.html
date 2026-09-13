@@ -1059,8 +1059,7 @@ async function loadProducts(){
 
         const url =
             SUPABASE_URL +
-            "/rest/v1/products?select=*&order=updated_at.desc";
-
+            "/rest/v1/Products?select=*&order=updated_at.desc";
 
         const response =
             await fetch(url,{
