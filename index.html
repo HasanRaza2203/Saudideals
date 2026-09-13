@@ -747,6 +747,27 @@ footer p{
     }
 }
 </style>
+
+<style id="professional-redesign">
+:root{--brand:#0b6b5f;--brand2:#064e3b;--accent:#f4b41a;--ink:#102030;--muted:#667085;--line:#e8ecef;--surface:#ffffff;--soft:#f6f8f8}
+html{scroll-behavior:smooth} body{font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f7f9fa;color:var(--ink)}
+header{box-shadow:0 1px 0 rgba(16,32,48,.06),0 8px 30px rgba(16,32,48,.04);backdrop-filter:blur(16px)}
+.navbar{min-height:78px}.logo{letter-spacing:-1.1px;font-size:28px}.nav-links button,.auth-btn{transition:.2s ease}.nav-links button:hover{transform:translateY(-1px)}
+.header-search{height:46px;border-color:#dde3e7;border-radius:14px;box-shadow:0 1px 2px rgba(16,32,48,.03)}.header-search:focus-within{border-color:#7dc3b8;box-shadow:0 0 0 4px rgba(15,118,110,.08)}
+.hero{position:relative;overflow:hidden;padding:82px 0 72px;background:radial-gradient(circle at 85% 20%,rgba(244,180,26,.20),transparent 26%),radial-gradient(circle at 10% 80%,rgba(255,255,255,.10),transparent 25%),linear-gradient(135deg,#064e3b 0%,#0f766e 55%,#0b5f58 100%)}
+.hero:after{content:"";position:absolute;width:420px;height:420px;border:1px solid rgba(255,255,255,.12);border-radius:50%;right:-180px;top:-210px}.hero-content{position:relative;z-index:1;max-width:880px}
+.hero h1{font-size:clamp(40px,6vw,62px);letter-spacing:-2.2px;line-height:1.02;margin-bottom:20px}.hero p{max-width:700px;margin:0 auto 30px;font-size:19px;line-height:1.7;color:#def4ef}
+.hero-search{max-width:760px;border-radius:17px;padding:8px;box-shadow:0 20px 60px rgba(0,0,0,.22)}.hero-search input{font-size:16px;padding:16px 18px}.hero-search button{border-radius:12px;padding:0 28px;background:linear-gradient(135deg,#fbbf24,#f59e0b)}
+.trust-strip{background:#fff;border-bottom:1px solid var(--line)}.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:18px 0}.trust-item{display:flex;align-items:center;justify-content:center;gap:10px;font-size:13px;color:#52606d;font-weight:700}.trust-item b{color:#0f766e}
+.section{padding:54px 0}.section-title h2{font-size:30px;letter-spacing:-.8px}.section-title:after{content:"";height:3px;width:46px;background:var(--accent);border-radius:999px;margin-left:14px}
+.categories{gap:14px}.category-btn{min-height:112px;border-radius:18px;padding:20px 12px;box-shadow:0 6px 22px rgba(16,32,48,.035);background:linear-gradient(180deg,#fff,#fcfdfd)}.category-btn:hover{box-shadow:0 14px 34px rgba(15,118,110,.10);transform:translateY(-4px)}
+.category-icon{font-size:30px;margin-bottom:10px}.product-grid{gap:22px}.product-card{border-color:#e8ecef;border-radius:20px;box-shadow:0 6px 24px rgba(16,32,48,.045);background:#fff}.product-card:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(16,32,48,.11);border-color:#d9e7e4}
+.product-image{background:linear-gradient(180deg,#fbfcfc,#f4f7f7)}.product-store{text-transform:uppercase;letter-spacing:.8px;font-size:11px;color:#0f766e;font-weight:800}.product-name{font-weight:750;color:#172033}.product-price{letter-spacing:-.5px}.discount{border-radius:999px;display:inline-block;padding:5px 9px;font-weight:800}.view-btn,.deal-btn{border-radius:11px;font-weight:800;transition:.2s ease}.deal-btn{background:linear-gradient(135deg,#0f766e,#0a5d56)}.view-btn:hover,.deal-btn:hover{transform:translateY(-1px)}
+.empty-state{grid-column:1/-1;background:#fff;border:1px dashed #cad5d2;border-radius:20px;padding:46px;text-align:center;color:var(--muted)}
+footer{margin-top:30px;background:#0d1f1d;color:#d9e5e2}.footer-grid h3{color:#fff}.footer-links button{color:#b9cbc7}.copyright{border-top-color:#29413d;color:#8fa6a1}
+@media(max-width:760px){.navbar{min-height:auto}.logo{font-size:24px}.hero{padding:56px 0 48px}.hero h1{font-size:40px;letter-spacing:-1.4px}.hero p{font-size:16px}.trust-grid{grid-template-columns:1fr 1fr}.section{padding:38px 0}.section-title h2{font-size:25px}.product-card{border-radius:16px}}
+@media(max-width:450px){.container{width:min(94%,1200px)}.hero h1{font-size:35px}.trust-grid{gap:10px}.trust-item{font-size:11px;text-align:center;flex-direction:column}.product-grid{gap:10px}.product-card{border-radius:14px}}
+</style>
 </head>
 
 <body>
@@ -1341,7 +1362,7 @@ function homeTemplate(){
                     <input
                         id="heroSearch"
                         type="search"
-                        placeholder="Search iPhone, laptop, PS5..."
+                        placeholder="What are you shopping for? iPhone, laptop, PS5..."
                         autocomplete="off"
                     >
 
@@ -1358,6 +1379,15 @@ function homeTemplate(){
 
             </div>
 
+        </section>
+
+        <section class="trust-strip" aria-label="SaudiDeals shopping benefits">
+            <div class="container trust-grid">
+                <div class="trust-item">✓ <span><b>Compare smarter</b><br>See shopping options together</span></div>
+                <div class="trust-item">↗ <span><b>Direct to stores</b><br>Buy from the retailer</span></div>
+                <div class="trust-item">♡ <span><b>Save favorites</b><br>Keep deals in your wishlist</span></div>
+                <div class="trust-item">🇸🇦 <span><b>Built for Saudi</b><br>Focused on KSA shoppers</span></div>
+            </div>
         </section>
 
 

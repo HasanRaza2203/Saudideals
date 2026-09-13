@@ -1,0 +1,19 @@
+{
+  "priority": "CRITICAL",
+  "issuedAt": "2026-09-13",
+  "deadline": "2026-09-14",
+  "objective": "Complete and launch-ready SaudiDeals website by tomorrow.",
+  "instructions": [
+    "All departments prioritize SaudiDeals launch readiness.",
+    "Development completes safe website features and fixes.",
+    "QA continuously tests critical customer flows.",
+    "Product validates product/category experience.",
+    "Data validates current catalog without fabricating merchant data.",
+    "Affiliate tracks approved integrations and blockers.",
+    "SEO and Marketing prepare launch-ready organic content.",
+    "Security checks secrets, links and deployment safety.",
+    "Compliance checks disclosures, privacy and terms.",
+    "CEO escalates only genuine owner approvals or external blockers."
+  ],
+  "approvalPolicy": "No spending, contracts, banking, paid ads, irreversible production changes, OTP/CAPTCHA, or sensitive credential actions without owner approval."
+}
