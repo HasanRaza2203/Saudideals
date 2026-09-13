@@ -597,6 +597,14 @@ footer p{
 
 /* MOBILE */
 
+
+.auth-btn{background:#0f766e!important;color:#fff!important;padding:9px 14px!important;border-radius:9px!important}
+.auth-modal{position:fixed;inset:0;background:rgba(15,23,42,.55);display:none;align-items:center;justify-content:center;z-index:3000;padding:18px}
+.auth-modal.open{display:flex}.auth-card{width:min(440px,100%);background:#fff;border-radius:18px;padding:26px;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.auth-card h2{margin-bottom:6px}.auth-card p{color:#64748b;margin-bottom:18px}.auth-close{float:right;border:0;background:none;font-size:24px}
+.auth-field{width:100%;padding:12px 13px;border:1px solid #d1d5db;border-radius:9px;margin:6px 0}.auth-action{width:100%;padding:12px;border:0;border-radius:9px;font-weight:800;margin-top:8px;background:#0f766e;color:#fff}
+.auth-google{background:#fff;color:#111827;border:1px solid #d1d5db}.auth-divider{text-align:center;color:#94a3b8;margin:14px 0}.auth-msg{font-size:13px;min-height:20px;margin-top:10px!important}.account-panel{display:none}.account-panel.open{display:block}
+
 @media(max-width:1000px){
 
     .categories{
@@ -752,6 +760,7 @@ footer p{
             <button onclick="goHome()">Home</button>
             <button onclick="showWishlist()">♡ Wishlist</button>
             <button onclick="showInfo('about')">About</button>
+            <button id="accountButton" class="auth-btn" onclick="openAuth()">Login</button>
         </div>
 
         <div class="header-search">
@@ -767,6 +776,21 @@ footer p{
     </div>
 </header>
 
+
+<div id="authModal" class="auth-modal" onclick="if(event.target===this)closeAuth()">
+<div class="auth-card"><button class="auth-close" onclick="closeAuth()">×</button>
+<div id="loginPanel"><h2>Login to SaudiDeals</h2><p>Save wishlists and manage your account.</p>
+<button id="googleAuthButton" class="auth-action auth-google" onclick="signInGoogle()">Continue with Google</button><div class="auth-divider">or</div>
+<input id="authEmail" class="auth-field" type="email" placeholder="Email address">
+<input id="authPassword" class="auth-field" type="password" placeholder="Password (6+ characters)">
+<button class="auth-action" onclick="emailLogin()">Login with Email</button>
+<button class="auth-action" onclick="emailSignup()">Create Account</button><div class="auth-divider">or phone OTP</div>
+<input id="authPhone" class="auth-field" type="tel" placeholder="+9665XXXXXXXX">
+<button id="phoneAuthButton" class="auth-action" onclick="sendPhoneOtp()">Send OTP</button>
+<input id="authOtp" class="auth-field" inputmode="numeric" placeholder="6-digit OTP">
+<button class="auth-action" onclick="verifyPhoneOtp()">Verify OTP</button><p id="authMessage" class="auth-msg"></p></div>
+<div id="accountPanel" class="account-panel"><h2>My Account</h2><p id="accountIdentity"></p><button class="auth-action" onclick="signOutUser()">Logout</button></div>
+</div></div>
 
 <main id="app"></main>
 
@@ -825,6 +849,7 @@ footer p{
 </footer>
 
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 
 /* =========================================================
@@ -836,6 +861,24 @@ const SUPABASE_URL =
 
 const SUPABASE_PUBLISHABLE_KEY =
     "sb_publishable_rcqTalygq3UwWu5luSNPNQ_P8t1OniI";
+
+
+
+const sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
+let currentUser=null;
+function authMsg(message,isError=false){const el=document.getElementById('authMessage');if(el){el.textContent=message;el.style.color=isError?'#b91c1c':'#0f766e';}}
+function openAuth(){document.getElementById('authModal').classList.add('open');refreshAuthUi();}
+function closeAuth(){document.getElementById('authModal').classList.remove('open');}
+function refreshAuthUi(){const login=document.getElementById('loginPanel'),account=document.getElementById('accountPanel'),btn=document.getElementById('accountButton');if(currentUser){login.style.display='none';account.classList.add('open');document.getElementById('accountIdentity').textContent=currentUser.email||currentUser.phone||'Signed in';btn.textContent='Account';}else{login.style.display='block';account.classList.remove('open');btn.textContent='Login';}}
+async function signInGoogle(){authMsg('Opening Google sign-in...');const {error}=await sb.auth.signInWithOAuth({provider:'google',options:{redirectTo:location.origin+location.pathname}});if(error)authMsg(error.message,true);}
+async function emailSignup(){const email=document.getElementById('authEmail').value.trim(),password=document.getElementById('authPassword').value;const {error}=await sb.auth.signUp({email,password});authMsg(error?error.message:'Account created. Check your email if confirmation is enabled.',!!error);}
+async function emailLogin(){const email=document.getElementById('authEmail').value.trim(),password=document.getElementById('authPassword').value;const {error}=await sb.auth.signInWithPassword({email,password});authMsg(error?error.message:'Logged in successfully.',!!error);if(!error){await syncCurrentUser();refreshAuthUi();}}
+async function sendPhoneOtp(){const phone=document.getElementById('authPhone').value.trim();const {error}=await sb.auth.signInWithOtp({phone});authMsg(error?error.message:'OTP sent to your phone.',!!error);}
+async function verifyPhoneOtp(){const phone=document.getElementById('authPhone').value.trim(),token=document.getElementById('authOtp').value.trim();const {error}=await sb.auth.verifyOtp({phone,token,type:'sms'});authMsg(error?error.message:'Phone verified. You are logged in.',!!error);if(!error){await syncCurrentUser();refreshAuthUi();}}
+async function signOutUser(){await sb.auth.signOut();currentUser=null;refreshAuthUi();closeAuth();}
+async function syncCurrentUser(){const {data}=await sb.auth.getUser();currentUser=data?.user||null;}
+async function loadAuthCapabilities(){try{const response=await fetch(SUPABASE_URL+'/auth/v1/settings',{headers:{apikey:SUPABASE_PUBLISHABLE_KEY}});const settings=await response.json();const google=document.getElementById('googleAuthButton'),phone=document.getElementById('phoneAuthButton');if(google&&!settings?.external?.google){google.disabled=true;google.textContent='Google login — setup pending';}if(phone&&!settings?.external?.phone){phone.disabled=true;phone.textContent='Phone OTP — setup pending';}}catch(e){console.warn('Auth capability check failed',e);}}
+sb.auth.onAuthStateChange((_event,session)=>{currentUser=session?.user||null;refreshAuthUi();});
 
 
 /* =========================================================
@@ -2233,8 +2276,7 @@ function showInfo(
                 <h2>Information We Collect</h2>
 
                 <p>
-                    The current version of the website does not require
-                    an account for normal product browsing.
+                    Browsing products does not require an account. If you choose to sign in, SaudiDeals may process your email address, phone number, or sign-in provider identifier to operate your account.
                 </p>
 
                 <h2>Local Storage</h2>
@@ -2518,6 +2560,8 @@ document.addEventListener(
    START
    ========================================================= */
 
+loadAuthCapabilities();
+syncCurrentUser().then(refreshAuthUi);
 loadProducts();
 
 </script>
