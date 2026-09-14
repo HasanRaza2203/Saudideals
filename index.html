@@ -16,6 +16,11 @@ fetch('app.html?brand=20260914',{cache:'no-store'})
     const newLogo='<div class="logo" onclick="goHome()"><img src="assets/saudideals-logo.svg" alt="SaudiDeals" style="width:min(220px,42vw);height:auto;display:block"></div>';
     html=html.replace(oldLogo,newLogo);
     html=html.replace('</head>','<link rel="icon" href="assets/saudideals-logo.svg" type="image/svg+xml"><style>.logo{line-height:0;display:flex;align-items:center}</style></head>');
+
+    const oldProducts=`products =\n            Array.isArray(rows)\n                ? rows.map(normalizeProduct)\n                : [];`;
+    const newProducts=`const validManualRow = row => {\n            const name=String(row?.name||'').trim();\n            const store=String(row?.store||'').trim();\n            const link=String(row?.affiliate_url||row?.product_url||'').trim();\n            if(!name||!store||!link||/^functions?$/i.test(name)||/^test/i.test(name)) return false;\n            try{const u=new URL(link);return ['http:','https:'].includes(u.protocol);}catch{return false;}\n        };\n\n        let manualRows=[];\n        try{\n            const manualResponse=await fetch('manual-products.json?ts='+Date.now(),{cache:'no-store'});\n            if(manualResponse.ok) manualRows=await manualResponse.json();\n        }catch(e){console.warn('Manual catalog unavailable',e);}\n\n        const combined=[...(Array.isArray(manualRows)?manualRows:[]),...(Array.isArray(rows)?rows:[])].filter(validManualRow);\n        const seen=new Set();\n        products=combined.filter(row=>{\n            const key=(String(row.store||'')+'|'+String(row.name||'')).toLowerCase();\n            if(seen.has(key)) return false;\n            seen.add(key);\n            return true;\n        }).map(normalizeProduct);`;
+    html=html.replace(oldProducts,newProducts);
+
     document.open();
     document.write(html);
     document.close();
