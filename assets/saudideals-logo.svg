@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180" role="img" aria-labelledby="title desc">
+<title id="title">SaudiDeals</title><desc id="desc">SaudiDeals shopping and price comparison logo</desc>
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#46d52b"/><stop offset=".55" stop-color="#07964b"/><stop offset="1" stop-color="#005c3c"/></linearGradient><linearGradient id="d" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#078449"/><stop offset="1" stop-color="#003e31"/></linearGradient></defs>
+<g transform="translate(8 8)"><path d="M38 48h113l19 94H23z" fill="url(#g)" rx="16"/><path d="M59 51c4-35 17-43 35-43s32 10 37 43" fill="none" stroke="#00633d" stroke-width="14" stroke-linecap="round"/>
+<path d="M16 67h35M12 87h34M7 107h38" stroke="#55d735" stroke-width="10" stroke-linecap="round"/>
+<path d="M83 69c9-8 20-8 29 0M98 63v42M82 82l32 23M114 82l-32 23" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none"/>
+<path d="M17 136c48 21 111 18 163-15" fill="none" stroke="#50d52c" stroke-width="10" stroke-linecap="round"/>
+<path d="M147 59l42 21-14 49-43-21z" fill="url(#d)"/><circle cx="164" cy="84" r="4" fill="#fff"/><text x="147" y="108" font-family="Arial,sans-serif" font-size="34" font-weight="800" fill="#fff">%</text></g>
+<g font-family="Arial,Helvetica,sans-serif" font-weight="800"><text x="220" y="96" font-size="62" fill="#111827">Saudi</text><text x="380" y="96" font-size="62" fill="#07964b">Deals</text></g>
+<text x="224" y="130" font-family="Arial,Helvetica,sans-serif" font-size="21" letter-spacing="5" fill="#41515b">COMPARE • SHOP • SAVE</text>
+<rect x="220" y="144" width="420" height="28" rx="14" fill="#00633d"/><text x="430" y="164" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="13" font-weight="700" letter-spacing="3" fill="#fff">BEST PRICES IN SAUDI ARABIA</text>
+</svg>
